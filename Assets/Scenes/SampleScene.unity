@@ -851,8 +851,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2018597403
-  m_SortingLayer: 2
+  m_SortingLayerID: 1731844029
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -6146700129834819302, guid: bb645ecfb475eeb4781a8e7e692eac87,
     type: 3}
@@ -933,18 +933,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1621047075}
-        m_MethodName: OnHorizontalMovement
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: d756e93c-80bc-4f9e-add2-6cdd364d8d5a
     m_ActionName: Hero/HorizontalMovement[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
@@ -962,6 +951,25 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f1ae6b68-f0c9-4f92-80df-e55c2bdb26de
     m_ActionName: Hero/SaySomething[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d3f35a62-f427-4c4d-b284-c0b515bb8a15
+    m_ActionName: Hero/VerticalMovement[/Keyboard/s,/Keyboard/w,/Keyboard/downArrow,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1621047075}
+        m_MethodName: OnMovementDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 896de36b-3b95-4c3c-8d7f-a54c7eda1acf
+    m_ActionName: Hero/MovementDirection[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero

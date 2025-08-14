@@ -6,20 +6,24 @@ public class Hero : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
-    private float _direction;
+    private Vector2 _direction;
 
-    public void SetDirection(float direction)
+    public void SetDirection(Vector2 direction)
     {
         _direction = direction;
     }
 
     void Update()
     {
-        if (_direction != 0)
+        if (_direction.x != 0 || _direction.y != 0)
         {
-            var delta = _direction * _speed * Time.deltaTime;
-            var newXPosition = transform.position.x + delta;
-            transform.position = new Vector3(newXPosition, transform.position.y, transform.position.z);
+            var deltaXPosition = _direction.x * _speed * Time.deltaTime;
+            var newXPosition = transform.position.x + deltaXPosition;
+
+            var deltaYPosition = _direction.y * _speed * Time.deltaTime;
+            var newYPosition = transform.position.y + deltaYPosition;
+
+            transform.position = new Vector3(newXPosition, newYPosition, transform.position.z);
         }
     }
 
