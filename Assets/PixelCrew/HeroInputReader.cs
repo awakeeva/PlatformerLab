@@ -4,28 +4,16 @@ using UnityEngine;
 
 public class HeroInputReader : MonoBehaviour
 {
-    private Hero _hero;
-
-    void Awake()
-    {
-        _hero = GetComponent<Hero>();
-    }
+    [SerializeField] private Hero _hero;
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        var horizontal = Input.GetAxis("Horizontal");
+        _hero.SetDirection(horizontal);
+
+        if (Input.GetButtonUp("Fire1"))
         {
-            _hero.SetDirection(-1);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            _hero.SetDirection(1);
-        }
-        else
-        {
-            _hero.SetDirection(0);
+            _hero.SaySomething();
         }
     }
-
-
 }
