@@ -4,45 +4,28 @@ using UnityEngine;
 
 public class HeroInputReader : MonoBehaviour
 {
-    private void Awake()
+    private Hero _hero;
+
+    void Awake()
     {
-        Debug.Log("Awake");
+        _hero = GetComponent<Hero>();
     }
 
-    private void OnEnable()
-    {
-        Debug.Log("OnEnable");
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("Start");
-    }
-
-    private void FixedUpdate()
-    {
-        Debug.Log("FixedUpdate");
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        Debug.Log("Update");
+        if (Input.GetKey(KeyCode.A))
+        {
+            _hero.SetDirection(-1);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            _hero.SetDirection(1);
+        }
+        else
+        {
+            _hero.SetDirection(0);
+        }
     }
 
-    private void LateUpdate()
-    {
-        Debug.Log("LateUpdate");
-    }
 
-    private void OnDisable()
-    {
-        Debug.Log("OnDisable");
-    }
-
-    private void OnDestroy()
-    {
-        Debug.Log("OnDestroy");
-    }
 }
