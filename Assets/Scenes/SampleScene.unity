@@ -1107,6 +1107,8 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  _groundCheckRadius: 0.3
+  _groundCheckPositionDelta: {x: 0, y: 0.22, z: 0}
 --- !u!114 &1621047077
 MonoBehaviour:
   m_ObjectHideFlags: 0
