@@ -6,6 +6,7 @@ public class Hero : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpSpeed;
+    [SerializeField] private LayerMask _groundLayer;
 
     private Rigidbody2D _rigidbody;
     private Vector2 _direction;

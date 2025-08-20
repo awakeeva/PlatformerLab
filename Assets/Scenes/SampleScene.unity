@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 125495957}
   - component: {fileID: 125495956}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 749497724}
   - component: {fileID: 749497723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,6 +1104,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _jumpSpeed: 1
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &1621047077
 MonoBehaviour:
   m_ObjectHideFlags: 0
