@@ -27,10 +27,21 @@ public class Hero : MonoBehaviour
 
         var isJumping = _direction.y > 0;
 
-        if (isJumping)
+        if (isJumping && IsGrounded())
         {
             _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
         }
+    }
+
+    private bool IsGrounded()
+    {
+        var hit = Physics2D.Raycast(transform.position, Vector2.down, 1, _groundLayer);
+        return hit.collider != null;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Debug.DrawRay(transform.position, Vector3.down, IsGrounded() ? Color.green : Color.red);
     }
 
     public void SaySomething()
