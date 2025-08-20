@@ -15,15 +15,10 @@ public class Hero : MonoBehaviour
 
     void Update()
     {
-        if (_direction.x != 0 || _direction.y != 0)
+        if (_direction.magnitude > 0)
         {
-            var deltaXPosition = _direction.x * _speed * Time.deltaTime;
-            var newXPosition = transform.position.x + deltaXPosition;
-
-            var deltaYPosition = _direction.y * _speed * Time.deltaTime;
-            var newYPosition = transform.position.y + deltaYPosition;
-
-            transform.position = new Vector3(newXPosition, newYPosition, transform.position.z);
+            var delta = _direction * _speed * Time.deltaTime;
+            transform.position = transform.position + new Vector3(delta.x, delta.y, transform.position.z);
         }
     }
 
