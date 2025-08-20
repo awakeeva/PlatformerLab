@@ -15,7 +15,7 @@
                 },
                 {
                     "name": "MovementDirection",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "896de36b-3b95-4c3c-8d7f-a54c7eda1acf",
                     "expectedControlType": "Vector2",
                     "processors": "",
