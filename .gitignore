@@ -2,3 +2,6 @@
 Temp
 obj/Debug
 .vs
+*.vsconfig
+*.csproj
+*.sln
