@@ -41,12 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Back
+  - name: Backgroud
     uniqueID: 784385387
     locked: 0
-  - name: Forward
+  - name: Decorback
     uniqueID: 2276369893
     locked: 0
-  - name: UserUnit
-    uniqueID: 1731844029
+  - name: Level
+    uniqueID: 2455329801
+    locked: 0
+  - name: Props
+    uniqueID: 3617495013
+    locked: 0
+  - name: Creatures
+    uniqueID: 2336709909
     locked: 0
