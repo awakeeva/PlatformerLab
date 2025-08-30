@@ -4,11 +4,11 @@ namespace PixelCrew
 {
     public class CoinTablo : MonoBehaviour
     {
-        [SerializeField] private int SilverCoinCost;
-        [SerializeField] private int GoldCoinCost;
+        private const int SilverCoinCost = 1;
+        private const int GoldCoinCost = 10;
 
-        private int _silverCoinCount = 0;
-        private int _goldCoinCount = 0;
+        private static int _silverCoinCount = 0;
+        private static int _goldCoinCount = 0;
 
         public void CollectSilverCoin()
         {
