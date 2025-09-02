@@ -6,6 +6,7 @@ public class Hero : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpSpeed;
+    [SerializeField] private float _damageJumpSpeed;
 
     [SerializeField] private LayerCheck _groundCheck;
 
@@ -19,6 +20,7 @@ public class Hero : MonoBehaviour
     private static readonly int isGroundKey = Animator.StringToHash("is-ground");
     private static readonly int isRunningKey = Animator.StringToHash("is-running");
     private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
+    private static readonly int Hit = Animator.StringToHash("hit");
 
     private void Awake()
     {
@@ -107,5 +109,11 @@ public class Hero : MonoBehaviour
     public void SaySomething()
     {
         Debug.Log("Something!");
+    }
+
+    public void TakeDamage()
+    {
+        _animator.SetTrigger(Hit);
+        _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
     }
 }
