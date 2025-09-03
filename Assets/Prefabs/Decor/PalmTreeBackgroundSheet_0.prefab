@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1391df816bb5c54789e96f9aa560b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 10
+  _frameRate: 5
   _loop: 1
   _sprites:
   - {fileID: 8683632313750085214, guid: ceb04a12f7176ae4b9e498f710709a35, type: 3}
