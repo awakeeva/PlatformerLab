@@ -15,6 +15,7 @@ namespace PixelCrew
         [SerializeField] private LayerMask _interactionLayer;
 
         [SerializeField] private SpawnComponent _footStepParticles;
+        [SerializeField] private ParticleSystem _hitParticles;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
         private Rigidbody2D _rigidbody;
@@ -26,7 +27,12 @@ namespace PixelCrew
         private static readonly int isGroundKey = Animator.StringToHash("is-ground");
         private static readonly int isRunningKey = Animator.StringToHash("is-running");
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
-        private static readonly int Hit = Animator.StringToHash("hit");
+        private static readonly int HitKey = Animator.StringToHash("hit");
+
+        private const int SilverCoinCost = 1;
+        private const int GoldCoinCost = 10;
+        private int _silverCoinCount = 0;
+        private int _goldCoinCount = 0;
 
         private void Awake()
         {
@@ -116,10 +122,46 @@ namespace PixelCrew
             Debug.Log("Something!");
         }
 
+        public void AddSilverCoin(int coins)
+        {
+            _silverCoinCount += coins;
+            LogCoins(coins > 0 ? $"[ADD +{coins}] " : $"[DEL {coins}]");
+        }
+
+        public void AddGoldCoin(int coins)
+        {
+            _goldCoinCount += coins;
+            LogCoins();
+        }
+
+        private void LogCoins(string metka = "[ADD]")
+        {
+            var total = _silverCoinCount * SilverCoinCost + _goldCoinCount * GoldCoinCost;
+            Debug.Log($"{metka} SilverCount ={_silverCoinCount} GoldCount ={_goldCoinCount} TotalMoney ={total}");
+        }
+
         public void TakeDamage()
         {
-            _animator.SetTrigger(Hit);
+            _animator.SetTrigger(HitKey);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
+
+            if (_silverCoinCount > 0)
+            {
+                SpawnCoins();
+            }
+        }
+
+        public void SpawnCoins()
+        {
+            var numCoinsToDispose = Mathf.Min(_silverCoinCount, 5);
+            AddSilverCoin(-numCoinsToDispose);
+
+            var burst = _hitParticles.emission.GetBurst(0);
+            burst.count = numCoinsToDispose;
+            _hitParticles.emission.SetBurst(0, burst);
+
+            _hitParticles.gameObject.SetActive(true);
+            _hitParticles.Play();
         }
 
         public void Interact()

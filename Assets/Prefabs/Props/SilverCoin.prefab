@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6008857312179986148}
   - component: {fileID: 6008857312179986147}
   - component: {fileID: 6008857312179986149}
-  - component: {fileID: 279988643}
+  - component: {fileID: 122684383304214999}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -120,17 +120,6 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 279988643}
-        m_MethodName: CollectSilverCoin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6008857312889423516}
         m_MethodName: SetActive
         m_Mode: 6
@@ -143,6 +132,28 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 6008857312179986145}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 122684383304214999}
+        m_MethodName: AddSilverCoin
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6008857312179986144}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -188,7 +199,7 @@ MonoBehaviour:
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &279988643
+--- !u!114 &122684383304214999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
