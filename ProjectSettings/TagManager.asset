@@ -56,3 +56,6 @@ TagManager:
   - name: Creatures
     uniqueID: 2336709909
     locked: 0
+  - name: Decorfront
+    uniqueID: 1761184659
+    locked: 0

@@ -8,6 +8,7 @@ namespace PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
+        [SerializeField] private float _heavyFallSpeed;
 
         [SerializeField] private LayerCheck _groundCheck;
 
@@ -16,6 +17,7 @@ namespace PixelCrew
 
         [SerializeField] private SpawnComponent _footStepParticles;
         [SerializeField] private SpawnComponent _jumpDustParticles;
+        [SerializeField] private SpawnComponent _fallDustParticles;
         [SerializeField] private ParticleSystem _hitParticles;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
@@ -25,9 +27,11 @@ namespace PixelCrew
         private bool _isGrounded;
         private bool _allowDoubleJump;
         private bool _hasJustJumpedFlag;
+        private bool _isHeavyFall;
 
         private static readonly int isGroundKey = Animator.StringToHash("is-ground");
         private static readonly int isRunningKey = Animator.StringToHash("is-running");
+        private static readonly int isHeavyFallKey = Animator.StringToHash("is-heavy-fall");
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
         private static readonly int HitKey = Animator.StringToHash("hit");
 
@@ -58,9 +62,19 @@ namespace PixelCrew
             var yVelocity = CalculateYVelocity();
             _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
+            if (!_allowDoubleJump || yVelocity <= -_heavyFallSpeed)
+            {
+                _isHeavyFall = true;
+            }
+            else if (!_isGrounded)
+            {
+                _isHeavyFall = false;
+            }
+
             _animator.SetBool(isGroundKey, _isGrounded);
             _animator.SetFloat(VerticalVelocityKey, _rigidbody.velocity.y);
             _animator.SetBool(isRunningKey, _direction.x != 0);
+            _animator.SetBool(isHeavyFallKey, _isHeavyFall);
 
             UpdateSpriteDirection();
 
@@ -202,5 +216,10 @@ namespace PixelCrew
         {
             _jumpDustParticles.Spawn();
         }
+        public void SpawnFallDust()
+        {
+            _fallDustParticles.Spawn();
+        }
+
     }
 }
