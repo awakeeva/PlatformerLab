@@ -15,6 +15,7 @@ namespace PixelCrew
         [SerializeField] private LayerMask _interactionLayer;
 
         [SerializeField] private SpawnComponent _footStepParticles;
+        [SerializeField] private SpawnComponent _jumpDustParticles;
         [SerializeField] private ParticleSystem _hitParticles;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
@@ -23,6 +24,7 @@ namespace PixelCrew
         private Animator _animator;
         private bool _isGrounded;
         private bool _allowDoubleJump;
+        private bool _hasJustJumpedFlag;
 
         private static readonly int isGroundKey = Animator.StringToHash("is-ground");
         private static readonly int isRunningKey = Animator.StringToHash("is-running");
@@ -61,6 +63,12 @@ namespace PixelCrew
             _animator.SetBool(isRunningKey, _direction.x != 0);
 
             UpdateSpriteDirection();
+
+            if (_hasJustJumpedFlag)
+            {
+                _hasJustJumpedFlag = false;
+                SpawnJumpDust();
+            }
         }
 
         private float CalculateYVelocity()
@@ -90,11 +98,13 @@ namespace PixelCrew
             if (_isGrounded)
             {
                 yVelocity += _jumpSpeed;
+                _hasJustJumpedFlag = true;
             }
             else if (_allowDoubleJump)
             {
                 yVelocity = _jumpSpeed;
                 _allowDoubleJump = false;
+                _hasJustJumpedFlag = true;
             }
 
             return yVelocity;
@@ -186,6 +196,11 @@ namespace PixelCrew
         public void SpawnFootDust()
         {
             _footStepParticles.Spawn();
+        }
+
+        public void SpawnJumpDust()
+        {
+            _jumpDustParticles.Spawn();
         }
     }
 }
