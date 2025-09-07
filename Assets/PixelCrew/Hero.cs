@@ -106,7 +106,7 @@ namespace PixelCrew
 
         private float CalculateJumpVelocity(float yVelocity)
         {
-            var isFalling = _rigidbody.velocity.y <= 0.001f;
+            var isFalling = _rigidbody.velocity.y <= 0.01f;
             if (!isFalling) return yVelocity;
 
             if (_isGrounded)
