@@ -4871,7 +4871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _jumpSpeed: 12
-  _damageJumpSpeed: 24
+  _damageJumpSpeed: 10
   _heavyFallSpeed: 14
   _groundCheck: {fileID: 1352751812}
   _interactionRadius: 1

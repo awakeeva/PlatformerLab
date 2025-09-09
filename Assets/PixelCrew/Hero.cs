@@ -26,6 +26,7 @@ namespace PixelCrew
         private Animator _animator;
         private bool _isGrounded;
         private bool _allowDoubleJump;
+        private bool _isJumping;
         private bool _hasJustJumpedFlag;
         private bool _isHeavyFall;
 
@@ -90,13 +91,18 @@ namespace PixelCrew
             var yVelocity = _rigidbody.velocity.y;
             var isJumpingPressing = _direction.y > 0;
 
-            if (_isGrounded) _allowDoubleJump = true;
+            if (_isGrounded)
+            {
+                _allowDoubleJump = true;
+                _isJumping = false;
+            }
 
             if (isJumpingPressing)
             {
+                _isJumping = true;
                 yVelocity = CalculateJumpVelocity(yVelocity);
             }
-            else if (_rigidbody.velocity.y > 0)
+            else if (_rigidbody.velocity.y > 0 && _isJumping)
             {
                 yVelocity *= 0.5f;
             }
@@ -166,6 +172,7 @@ namespace PixelCrew
 
         public void TakeDamage()
         {
+            _isJumping = false;
             _animator.SetTrigger(HitKey);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
 
