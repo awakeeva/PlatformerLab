@@ -8,6 +8,7 @@ namespace PixelCrew.Components
         [SerializeField] private int _fullHealth;
         [SerializeField] private int _health;
         [SerializeField] private UnityEvent _onDamage;
+        [SerializeField] private UnityEvent _onHeal;
         [SerializeField] private UnityEvent _onDie;
 
         private void Awake()
@@ -15,25 +16,39 @@ namespace PixelCrew.Components
             _health = _fullHealth;
         }
 
-        public void ApplyDamage(int damageValue)
+        public void ModifyHealth(int healthDelta)
         {
-            _health -= damageValue;
-            _onDamage?.Invoke();
+            _health += healthDelta;
+
+            if (healthDelta < 0)
+            {
+                _onDamage?.Invoke();
+            }
+
+            if (healthDelta > 0)
+            {
+                _onHeal?.Invoke();
+            }
 
             if (_health <= 0)
             {
                 _onDie?.Invoke();
             }
-        }
-
-        public void ApplyHealing(int healValue)
-        {
-            _health += healValue;
 
             if (_health > _fullHealth)
             {
                 _health = _fullHealth;
             }
+        }
+
+        public void ApplyDamage(int damageValue)
+        {
+            ModifyHealth(damageValue);
+        }
+
+        public void ApplyHealing(int healValue)
+        {
+            ModifyHealth(healValue);
         }
     }
 }

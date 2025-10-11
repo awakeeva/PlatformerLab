@@ -130,8 +130,8 @@ GameObject:
   - component: {fileID: 7338039446492619946}
   - component: {fileID: 7338039446492619957}
   - component: {fileID: 7338039446492619958}
-  - component: {fileID: 7338039446492619952}
   - component: {fileID: 7338039446492619959}
+  - component: {fileID: 7631304255763199321}
   m_Layer: 0
   m_Name: Health Potion
   m_TagString: Untagged
@@ -269,19 +269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 7338039446492619945}
---- !u!114 &7338039446492619952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7338039446492619945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec4aefb96484354db062a3be5869c3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _heal: 5
 --- !u!114 &7338039446492619959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,8 +285,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7338039446492619952}
-        m_MethodName: ApplyHealing
+      - m_Target: {fileID: 7631304255763199321}
+        m_MethodName: Apply
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -331,3 +318,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7631304255763199321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7338039446492619945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202f6552248f95e47a516e536bc4695e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hpDelta: 5
