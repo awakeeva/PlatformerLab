@@ -5,3 +5,4 @@ obj/Debug
 *.vsconfig
 *.csproj
 *.sln
+Logs/Packages-Update.log
