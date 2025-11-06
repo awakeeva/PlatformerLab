@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using PixelCrew.Components;
 using PixelCrew.Utils;
+using UnityEditorInternal;
 
 namespace PixelCrew
 {
@@ -12,11 +13,18 @@ namespace PixelCrew
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _heavyFallSpeed;
 
+        [SerializeField] private int _damage;
+
         [SerializeField] private LayerCheck _groundCheck;
 
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
+
+        [SerializeField] private UnityEditor.Animations.AnimatorController _armed;
+        [SerializeField] private UnityEditor.Animations.AnimatorController _disarmed;
+
+        [SerializeField] private CheckCircleOverlap _attackRange;
 
         [Space] [Header("Particles")]
         [SerializeField] private SpawnComponent _footStepParticles;
@@ -39,11 +47,14 @@ namespace PixelCrew
         //private static readonly int isHeavyFallKey = Animator.StringToHash("is-heavy-fall");
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
         private static readonly int HitKey = Animator.StringToHash("hit");
+        private static readonly int AttackKey = Animator.StringToHash("attack");
 
         private const int SilverCoinCost = 1;
         private const int GoldCoinCost = 10;
         private int _silverCoinCount = 0;
         private int _goldCoinCount = 0;
+
+        private bool _isArmed;
 
         private void Awake()
         {
@@ -228,6 +239,34 @@ namespace PixelCrew
                     interactable.Interact();
                 }
             }
+        }
+
+        public void Attack()
+        {
+            if (!_isArmed) return;
+
+            _animator.SetTrigger(AttackKey);
+        }
+
+        public void HeroAttack()
+        {
+            var gos = _attackRange.GetObjectsInRange();
+
+            foreach (var go in gos)
+            {
+                var hp = go.GetComponent<HealthComponent>();
+
+                if (hp != null && go.CompareTag("Enemy"))
+                {
+                    hp.ModifyHealth(_damage);
+                }
+            }
+        }
+
+        public void ArmHero()
+        {
+            _isArmed = true;
+            _animator.runtimeAnimatorController = _armed;
         }
 
         public void SpawnFootDust()
