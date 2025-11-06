@@ -32,6 +32,9 @@ namespace PixelCrew
         [SerializeField] private SpawnComponent _fallDustParticles;
         [SerializeField] private ParticleSystem _hitParticles;
 
+        [Space] [Header("Sword Effects")]
+        [SerializeField] private GameObject _StabbingBlowEffect;
+
         private Collider2D[] _interactionResult = new Collider2D[1];
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
@@ -281,6 +284,10 @@ namespace PixelCrew
         public void SpawnFallDust()
         {
             _fallDustParticles.Spawn();
+        }
+        public void SpawnStabbingBlowEffect()
+        {
+            _StabbingBlowEffect.SetActive(true);
         }
 
     }
