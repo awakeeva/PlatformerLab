@@ -11,8 +11,10 @@ namespace PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
+
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _heavyFallSpeed;
+        [SerializeField] private float _damageVelocity;
 
         [SerializeField] private int _damage;
 
@@ -37,6 +39,7 @@ namespace PixelCrew
         [SerializeField] private GameObject _StabbingBlowEffect;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
+        private HealthComponent _healthComponent;
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
         private Animator _animator;
@@ -66,14 +69,14 @@ namespace PixelCrew
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+            _healthComponent = GetComponent<HealthComponent>();
         }
 
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
 
-            var health = GetComponent<HealthComponent>();
-            health.SetHealth(_session.Data.FullHealth, _session.Data.Health);
+            _healthComponent.SetHealth(_session.Data.FullHealth, _session.Data.Health);
 
             UpdateHeroWeapon();
         }
@@ -131,6 +134,11 @@ namespace PixelCrew
                 if (contact.relativeVelocity.y >= _slamDownVelocity)
                 {
                     SpawnFallDust();
+                }
+
+                if (contact.relativeVelocity.y >= _damageVelocity)
+                {
+                    _healthComponent.ModifyHealth(-1);
                 }
             }
         }

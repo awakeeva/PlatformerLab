@@ -5307,6 +5307,7 @@ MonoBehaviour:
   _damageJumpSpeed: 10
   _slamDownVelocity: 14
   _heavyFallSpeed: 14
+  _damageVelocity: 25
   _damage: -1
   _groundCheck: {fileID: 661183055147761082}
   _groundLayer:
