@@ -55,6 +55,13 @@ namespace PixelCrew.Components
             ModifyHealth(healValue);
         }
 
+#if UNITY_EDITOR
+        [ContextMenu("Update Health")]
+        private void UpdateHealth()
+        {
+            _onChange?.Invoke(_fullHealth, _health);
+        }
+#endif
         public void SetHealth(int fullHealth, int currentHealth)
         {
             _fullHealth = fullHealth;
