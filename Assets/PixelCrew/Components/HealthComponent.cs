@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace PixelCrew.Components
@@ -10,6 +11,7 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] private UnityEvent _onDie;
+        [SerializeField] private HealthChangeEvent _onChange;
 
         private void Awake()
         {
@@ -19,6 +21,8 @@ namespace PixelCrew.Components
         public void ModifyHealth(int healthDelta)
         {
             _health += healthDelta;
+
+            _onChange?.Invoke(_fullHealth, _health);
 
             if (healthDelta < 0)
             {
@@ -49,6 +53,18 @@ namespace PixelCrew.Components
         public void ApplyHealing(int healValue)
         {
             ModifyHealth(healValue);
+        }
+
+        public void SetHealth(int fullHealth, int currentHealth)
+        {
+            _fullHealth = fullHealth;
+            _health = currentHealth;
+        }
+
+        [Serializable]
+        public class HealthChangeEvent : UnityEvent<int, int>
+        {
+
         }
     }
 }

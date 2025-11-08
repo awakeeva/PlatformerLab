@@ -2,6 +2,7 @@
 using PixelCrew.Components;
 using PixelCrew.Utils;
 using UnityEditorInternal;
+using PixelCrew.Model;
 
 namespace PixelCrew
 {
@@ -54,15 +55,33 @@ namespace PixelCrew
 
         private const int SilverCoinCost = 1;
         private const int GoldCoinCost = 10;
-        private int _silverCoinCount = 0;
-        private int _goldCoinCount = 0;
+        //private int _silverCoinCount = 0;
+        //private int _goldCoinCount = 0;
 
-        private bool _isArmed;
+        //private bool _isArmed;
+
+        private GameSession _session;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+        }
+
+        private void Start()
+        {
+            _session = FindObjectOfType<GameSession>();
+
+            var health = GetComponent<HealthComponent>();
+            health.SetHealth(_session.Data.FullHealth, _session.Data.Health);
+
+            UpdateHeroWeapon();
+        }
+
+        public void OnHealthChanged(int fullHealth, int currentHealth)
+        {
+            _session.Data.FullHealth = fullHealth;
+            _session.Data.Health = currentHealth;
         }
 
         public void SetDirection(Vector2 direction)
@@ -184,20 +203,20 @@ namespace PixelCrew
 
         public void AddSilverCoin(int coins)
         {
-            _silverCoinCount += coins;
+            _session.Data.SilverCoinCount += coins;
             LogCoins(coins > 0 ? $"[ADD +{coins}] " : $"[DEL {coins}]");
         }
 
         public void AddGoldCoin(int coins)
         {
-            _goldCoinCount += coins;
+            _session.Data.GoldCoinCount += coins;
             LogCoins();
         }
 
         private void LogCoins(string metka = "[ADD]")
         {
-            var total = _silverCoinCount * SilverCoinCost + _goldCoinCount * GoldCoinCost;
-            Debug.Log($"{metka} SilverCount ={_silverCoinCount} GoldCount ={_goldCoinCount} TotalMoney ={total}");
+            var total = _session.Data.SilverCoinCount * SilverCoinCost + _session.Data.GoldCoinCount * GoldCoinCost;
+            Debug.Log($"{metka} SilverCount ={_session.Data.SilverCoinCount} GoldCount ={_session.Data.GoldCoinCount} TotalMoney ={total}");
         }
 
         public void TakeDamage()
@@ -206,7 +225,7 @@ namespace PixelCrew
             _animator.SetTrigger(HitKey);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
 
-            if (_silverCoinCount > 0)
+            if (_session.Data.SilverCoinCount > 0)
             {
                 SpawnCoins();
             }
@@ -214,7 +233,7 @@ namespace PixelCrew
 
         public void SpawnCoins()
         {
-            var numCoinsToDispose = Mathf.Min(_silverCoinCount, 5);
+            var numCoinsToDispose = Mathf.Min(_session.Data.SilverCoinCount, 5);
             AddSilverCoin(-numCoinsToDispose);
 
             var burst = _hitParticles.emission.GetBurst(0);
@@ -246,7 +265,7 @@ namespace PixelCrew
 
         public void Attack()
         {
-            if (!_isArmed) return;
+            if (!_session.Data.isArmed) return;
 
             _animator.SetTrigger(AttackKey);
         }
@@ -268,8 +287,14 @@ namespace PixelCrew
 
         public void ArmHero()
         {
-            _isArmed = true;
-            _animator.runtimeAnimatorController = _armed;
+            _session.Data.isArmed = true;
+            UpdateHeroWeapon();
+        }
+
+        private void UpdateHeroWeapon()
+        {
+            _animator.runtimeAnimatorController =
+                _session.Data.isArmed ? _armed : _disarmed;
         }
 
         public void SpawnFootDust()
