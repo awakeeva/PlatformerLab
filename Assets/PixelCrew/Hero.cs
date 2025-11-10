@@ -24,6 +24,8 @@ namespace PixelCrew
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
 
+        [SerializeField] private LayerCheck _wallCheck;
+
         [SerializeField] private UnityEditor.Animations.AnimatorController _armed;
         [SerializeField] private UnityEditor.Animations.AnimatorController _disarmed;
 
@@ -47,6 +49,7 @@ namespace PixelCrew
         private bool _allowDoubleJump;
         private bool _isJumping;
         private bool _hasJustJumpedFlag;
+        private bool _isOnWall;
         //private bool _isHeavyFall;
 
         private static readonly int isGroundKey = Animator.StringToHash("is-ground");
@@ -58,18 +61,17 @@ namespace PixelCrew
 
         private const int SilverCoinCost = 1;
         private const int GoldCoinCost = 10;
-        //private int _silverCoinCount = 0;
-        //private int _goldCoinCount = 0;
-
-        //private bool _isArmed;
 
         private GameSession _session;
+        private float _defaultGravityScale;
+
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _healthComponent = GetComponent<HealthComponent>();
+            _defaultGravityScale = _rigidbody.gravityScale;
         }
 
         private void Start()
@@ -95,6 +97,17 @@ namespace PixelCrew
         private void Update()
         {
             _isGrounded = IsGrounded();
+
+            if (_wallCheck.IsTouchingLayer && _direction.x == transform.localScale.x)
+            {
+                _isOnWall = true;
+                _rigidbody.gravityScale = 0;
+            }
+            else
+            {
+                _isOnWall = false;
+                _rigidbody.gravityScale = _defaultGravityScale;
+            }
         }
 
         private void FixedUpdate()
@@ -154,10 +167,19 @@ namespace PixelCrew
                 _isJumping = false;
             }
 
+            if (_isOnWall)
+            {
+                _allowDoubleJump = true;
+            }
+
             if (isJumpingPressing)
             {
                 _isJumping = true;
                 yVelocity = CalculateJumpVelocity(yVelocity);
+            }
+            else if (_isOnWall)
+            {
+                yVelocity = 0f;
             }
             else if (_rigidbody.velocity.y > 0 && _isJumping)
             {
