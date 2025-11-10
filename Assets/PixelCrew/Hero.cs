@@ -11,6 +11,8 @@ namespace PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
+        [SerializeField] private float _dashSpeed;
+        [SerializeField] private float _dashDuration;
 
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _heavyFallSpeed;
@@ -50,6 +52,8 @@ namespace PixelCrew
         private bool _isJumping;
         private bool _hasJustJumpedFlag;
         private bool _isOnWall;
+        private bool _isDashOn;
+        private float _dashTimer;
         //private bool _isHeavyFall;
 
         private static readonly int isGroundKey = Animator.StringToHash("is-ground");
@@ -112,7 +116,7 @@ namespace PixelCrew
 
         private void FixedUpdate()
         {
-            var xVelocity = _direction.x * _speed;
+            var xVelocity = CalculateXVelocity();
             var yVelocity = CalculateYVelocity();
             _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
@@ -154,6 +158,29 @@ namespace PixelCrew
                     _healthComponent.ModifyHealth(-1);
                 }
             }
+        }
+
+        private float CalculateXVelocity()
+        {
+            if (_dashTimer > 0)
+            {
+                _dashTimer -= Time.deltaTime;
+            }
+            else
+            {
+                _dashTimer = 0;
+                _isDashOn = false;
+            }
+
+            if (_isDashOn)
+            {
+                return transform.localScale.x * _dashSpeed;
+            }
+            else
+            {
+                return _direction.x * _speed;
+            }
+            //return _direction.x * (_isDashOn ? _dashSpeed : _speed);
         }
 
         private float CalculateYVelocity()
@@ -291,6 +318,12 @@ namespace PixelCrew
                     interactable.Interact();
                 }
             }
+        }
+
+        public void Dash()
+        {
+            _isDashOn = true;
+            _dashTimer = _dashDuration;
         }
 
         public void Attack()

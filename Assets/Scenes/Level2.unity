@@ -7224,6 +7224,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 661183055954219098, guid: 5082cf39e8f09664aa3c0a3b0333f3fb,
+        type: 3}
+      propertyPath: _dashSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 661183055954219098, guid: 5082cf39e8f09664aa3c0a3b0333f3fb,
+        type: 3}
+      propertyPath: _dashDuration
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 661183055954219100, guid: 5082cf39e8f09664aa3c0a3b0333f3fb,
         type: 3}
       propertyPath: m_RootOrder

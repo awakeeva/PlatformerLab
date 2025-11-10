@@ -5370,6 +5370,8 @@ MonoBehaviour:
   _speed: 5
   _jumpSpeed: 12
   _damageJumpSpeed: 10
+  _dashSpeed: 30
+  _dashDuration: 1
   _slamDownVelocity: 14
   _heavyFallSpeed: 14
   _damageVelocity: 25
@@ -5477,6 +5479,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c2c587eb-3dfe-477a-9191-010a2287a9f6
     m_ActionName: Hero/Attack[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 661183055954219101}
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a2a07a51-8af4-4457-be5c-82444f206609
+    m_ActionName: Hero/Dash[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
