@@ -465,10 +465,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3e2aa9285cdbf43955774fa490df5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.2
+  _radius: 0.4
   _mask:
     serializedVersion: 2
-    m_Bits: 3895
+    m_Bits: 12087
   _onOverlap:
     m_PersistentCalls:
       m_Calls:
@@ -5373,6 +5373,9 @@ GameObject:
   - component: {fileID: 661183055954219094}
   - component: {fileID: 661183055954219095}
   - component: {fileID: 7111335695637610004}
+  - component: {fileID: 1769602471}
+  - component: {fileID: 6479840172338315888}
+  - component: {fileID: 5660225802552641306}
   m_Layer: 12
   m_Name: "\u2764\uFE0F Hero"
   m_TagString: Player
@@ -5478,9 +5481,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c009df8c0a65e0542ad661d39990811c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _invertScale: 0
   _speed: 5
   _jumpSpeed: 12
-  _takeDamageJumpSpeed: 10
+  _takeDamageJumpSpeed: 0
   _fallDamageSpeed: 25
   _groundCheck: {fileID: 661183055147761082}
   _groundLayer:
@@ -5525,21 +5529,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 661183055954219101}
-        m_MethodName: OnSaySomething
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: f1ae6b68-f0c9-4f92-80df-e55c2bdb26de
-    m_ActionName: Hero/SaySomething[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 661183055954219101}
@@ -5674,7 +5663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fullHealth: 5
-  _health: 1
+  _health: 5
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -5694,18 +5683,7 @@ MonoBehaviour:
       m_Calls: []
   _onDie:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Reload
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onChange:
     m_PersistentCalls:
       m_Calls:
@@ -5739,3 +5717,39 @@ MonoBehaviour:
     Component: {fileID: 661183055412184886}
   - Id: FallDust
     Component: {fileID: 661183055162066510}
+--- !u!114 &1769602471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661183055954219102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d684bba53ca9b234ba7e349a0b8516a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6479840172338315888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661183055954219102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d684bba53ca9b234ba7e349a0b8516a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5660225802552641306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661183055954219102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d684bba53ca9b234ba7e349a0b8516a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
