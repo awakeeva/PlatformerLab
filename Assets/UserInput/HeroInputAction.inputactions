@@ -6,15 +6,6 @@
             "id": "3139875a-99c0-463e-8dd9-4d154c5709e8",
             "actions": [
                 {
-                    "name": "SaySomething",
-                    "type": "Button",
-                    "id": "f1ae6b68-f0c9-4f92-80df-e55c2bdb26de",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "MovementDirection",
                     "type": "Value",
                     "id": "896de36b-3b95-4c3c-8d7f-a54c7eda1acf",
@@ -52,17 +43,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "2cb18bf2-282b-45a1-a7e0-e4ed07d1e19e",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SaySomething",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "KeyboardArrows",
                     "id": "c22a0e66-bf33-4e52-8fd8-3fe0c47ab78a",
