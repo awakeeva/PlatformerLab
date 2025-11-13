@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Animations;
 using PixelCrew.Components;
 using PixelCrew.Utils;
 using PixelCrew.Model;
@@ -15,7 +16,6 @@ namespace PixelCrew.Creatures
         [SerializeField] private float _heavyFallSpeed;
         
         [SerializeField] private CheckCircleOverlap _interactionCheck;
-        [SerializeField] private float _interactionRadius;
 
         [SerializeField] private LayerCheck _wallCheck;
 

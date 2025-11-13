@@ -116,7 +116,7 @@ namespace PixelCrew.Creatures
         {
             if (IsGrounded)
             {
-                yVelocity += _jumpSpeed;
+                yVelocity = _jumpSpeed;
                 HasJustJumpedFlag = true;
             }
 

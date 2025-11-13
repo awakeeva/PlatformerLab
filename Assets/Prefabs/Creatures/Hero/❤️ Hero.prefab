@@ -5373,9 +5373,6 @@ GameObject:
   - component: {fileID: 661183055954219094}
   - component: {fileID: 661183055954219095}
   - component: {fileID: 7111335695637610004}
-  - component: {fileID: 1769602471}
-  - component: {fileID: 6479840172338315888}
-  - component: {fileID: 5660225802552641306}
   m_Layer: 12
   m_Name: "\u2764\uFE0F Hero"
   m_TagString: Player
@@ -5497,7 +5494,6 @@ MonoBehaviour:
   _slamDownVelocity: 14
   _heavyFallSpeed: 14
   _interactionCheck: {fileID: 828418110}
-  _interactionRadius: 1
   _wallCheck: {fileID: 1883179480}
   _armed: {fileID: 9100000, guid: 452cf04eee1b40b47ac07a6a1f0ee2d6, type: 2}
   _disarmed: {fileID: 9100000, guid: 3e7c596d127c79e468d95e2a73c9de3b, type: 2}
@@ -5717,39 +5713,3 @@ MonoBehaviour:
     Component: {fileID: 661183055412184886}
   - Id: FallDust
     Component: {fileID: 661183055162066510}
---- !u!114 &1769602471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661183055954219102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d684bba53ca9b234ba7e349a0b8516a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6479840172338315888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661183055954219102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d684bba53ca9b234ba7e349a0b8516a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5660225802552641306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661183055954219102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d684bba53ca9b234ba7e349a0b8516a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

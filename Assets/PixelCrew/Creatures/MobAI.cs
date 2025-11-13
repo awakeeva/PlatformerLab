@@ -25,16 +25,19 @@ namespace PixelCrew.Creatures
 
         private bool _isDead;
 
+        private Patrol _patrol;
+
         private void Awake()
         {
             _particles = GetComponent<SpawnListComponent>();
             _creature = GetComponent<Creature>();
             _animator = GetComponent<Animator>();
+            _patrol = GetComponent<Patrol>();
         }
 
         private void Start()
         {
-            StartState(Patrolling());
+            StartState(_patrol.DoPatrol());
         }
 
         public void OnHeroInVision(GameObject go)
@@ -90,11 +93,6 @@ namespace PixelCrew.Creatures
             var direction = _target.transform.position - transform.position;
             direction.y = 0;
             _creature.SetDirection(direction.normalized);
-        }
-
-        private IEnumerator Patrolling()
-        {
-            yield return null;
         }
 
         private void StartState(IEnumerator coroutine)
