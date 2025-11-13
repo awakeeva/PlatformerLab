@@ -91,7 +91,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2042910016}
+      - m_Target: {fileID: 1867434217350136229}
         m_MethodName: OnHeroInVision
         m_Mode: 0
         m_Arguments:
@@ -438,8 +438,8 @@ GameObject:
   - component: {fileID: 661183055954219095}
   - component: {fileID: 7111335695637610004}
   - component: {fileID: 858968965477994349}
-  - component: {fileID: 2042910016}
   - component: {fileID: 691901914}
+  - component: {fileID: 1867434217350136229}
   m_Layer: 13
   m_Name: "\u2764\uFE0F Sharky"
   m_TagString: Enemy
@@ -609,7 +609,7 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2042910016}
+      - m_Target: {fileID: 1867434217350136229}
         m_MethodName: OnDie
         m_Mode: 1
         m_Arguments:
@@ -669,7 +669,23 @@ MonoBehaviour:
     m_Bits: 256
   _attackRange: {fileID: 661183055547531805}
   _particles: {fileID: 7111335695637610004}
---- !u!114 &2042910016
+--- !u!114 &691901914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661183055954219102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74672c4078c7bae4a92e01c446d2c80a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _points:
+  - {fileID: 0}
+  - {fileID: 0}
+  _treshold: 1
+--- !u!114 &1867434217350136229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -686,20 +702,6 @@ MonoBehaviour:
   _alarmDelay: 0.5
   _attackCooldown: 1
   _missHeroCooldown: 0.5
---- !u!114 &691901914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661183055954219102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74672c4078c7bae4a92e01c446d2c80a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _points: []
-  _treshold: 1
 --- !u!1 &6899505705232594866
 GameObject:
   m_ObjectHideFlags: 0
