@@ -3,6 +3,7 @@ using UnityEngine.Animations;
 using PixelCrew.Components;
 using PixelCrew.Utils;
 using PixelCrew.Model;
+using System;
 
 namespace PixelCrew.Creatures
 {
@@ -25,6 +26,8 @@ namespace PixelCrew.Creatures
 
         [Space] [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticles;
+
+        private static readonly int ThrowKey = Animator.StringToHash("throw");
 
         private bool _allowDoubleJump;
 
@@ -222,6 +225,16 @@ namespace PixelCrew.Creatures
         public void SpawnStabbingBlowEffect()
         {
             _StabbingBlowEffect.SetActive(true);
+        }
+
+        public void OnDoThrow()
+        {
+            _particles.Spawn("ThrowSword");
+        }
+
+        public void Throw()
+        {
+            AnimatorComp.SetTrigger(ThrowKey);
         }
 
     }

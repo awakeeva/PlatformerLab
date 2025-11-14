@@ -16,20 +16,25 @@ namespace PixelCrew
 
         public void OnInteract(InputAction.CallbackContext context)
         {
-            if (context.canceled)
+            if (context.performed)
                 _hero.Interact();
         }
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if (context.canceled)
+            if (context.performed)
                 _hero.Attack();
         }
 
         public void OnDash(InputAction.CallbackContext context)
         {
-            if (context.canceled)
+            if (context.performed)
                 _hero.Dash();
         }
 
+        public void OnThrow(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                _hero.Throw();
+        }
     }
 }
