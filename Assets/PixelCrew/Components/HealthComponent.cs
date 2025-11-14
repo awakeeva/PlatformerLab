@@ -13,6 +13,8 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _onDie;
         [SerializeField] private HealthChangeEvent _onChange;
 
+        private bool _isDead;
+
         private void Awake()
         {
             _health = _fullHealth;
@@ -20,6 +22,8 @@ namespace PixelCrew.Components
 
         public void ModifyHealth(int healthDelta)
         {
+            if (_isDead) return;
+
             _health += healthDelta;
 
             _onChange?.Invoke(_fullHealth, _health);
@@ -36,6 +40,7 @@ namespace PixelCrew.Components
 
             if (_health <= 0)
             {
+                _isDead = true;
                 _onDie?.Invoke();
             }
 

@@ -101,7 +101,7 @@ namespace PixelCrew.Creatures
             if (isJumpingPressing)
             {
                 _isJumping = true;
-                var isFalling = RigidbodyComp.velocity.y <= 0.01f;
+                var isFalling = RigidbodyComp.velocity.y <= 0.001f;
                 yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
             }
             else if (RigidbodyComp.velocity.y > 0 && _isJumping)

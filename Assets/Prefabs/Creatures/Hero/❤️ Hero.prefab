@@ -201,7 +201,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3026001}
+  m_Offset: {x: -0.019275665, y: -0.29938743}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -212,7 +212,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.42, y: 0.18520021}
+  m_Size: {x: 0.47782135, y: 0.1787749}
   m_EdgeRadius: 0
 --- !u!1 &661183055162066512
 GameObject:
@@ -5373,6 +5373,7 @@ GameObject:
   - component: {fileID: 661183055954219094}
   - component: {fileID: 661183055954219095}
   - component: {fileID: 7111335695637610004}
+  - component: {fileID: 1187291199}
   m_Layer: 12
   m_Name: "\u2764\uFE0F Hero"
   m_TagString: Player
@@ -5481,7 +5482,7 @@ MonoBehaviour:
   _invertScale: 0
   _speed: 5
   _jumpSpeed: 12
-  _takeDamageJumpSpeed: 0
+  _takeDamageJumpSpeed: 5
   _fallDamageSpeed: 25
   _groundCheck: {fileID: 661183055147761082}
   _groundLayer:
@@ -5679,7 +5680,18 @@ MonoBehaviour:
       m_Calls: []
   _onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1187291199}
+        m_MethodName: Reload
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onChange:
     m_PersistentCalls:
       m_Calls:
@@ -5713,3 +5725,15 @@ MonoBehaviour:
     Component: {fileID: 661183055412184886}
   - Id: FallDust
     Component: {fileID: 661183055162066510}
+--- !u!114 &1187291199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661183055954219102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d684bba53ca9b234ba7e349a0b8516a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -58,6 +58,13 @@ namespace PixelCrew.Creatures
             StartState(GoToHero());
         }
 
+        private IEnumerator MissHero()
+        {
+            _particles.Spawn("Miss");
+            yield return new WaitForSeconds(_missHeroCooldown);
+            StartState(_patrol.DoPatrol());
+        }
+
         private IEnumerator GoToHero()
         {
             while (_vision.IsTouchingLayer)
@@ -73,8 +80,8 @@ namespace PixelCrew.Creatures
 
                 yield return null;
             }
-            _particles.Spawn("Miss");
-            yield return new WaitForSeconds(_missHeroCooldown);
+            
+            StartState(MissHero());
         }
 
         private IEnumerator Attack()
