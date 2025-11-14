@@ -671,6 +671,11 @@ PrefabInstance:
       propertyPath: _points.Array.data[1]
       value: 
       objectReference: {fileID: 343188009}
+    - target: {fileID: 661183055726721549, guid: f06f049411b07314185d761fbd299c58,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 661183055954219100, guid: f06f049411b07314185d761fbd299c58,
         type: 3}
       propertyPath: m_RootOrder
