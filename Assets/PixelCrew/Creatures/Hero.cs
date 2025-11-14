@@ -13,6 +13,8 @@ namespace PixelCrew.Creatures
         [SerializeField] private float _dashSpeed;
         [SerializeField] private float _dashDuration;
 
+        [SerializeField] private Cooldown _throwCooldown;
+
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _heavyFallSpeed;
         
@@ -234,7 +236,11 @@ namespace PixelCrew.Creatures
 
         public void Throw()
         {
-            AnimatorComp.SetTrigger(ThrowKey);
+            if (_throwCooldown.IsReady)
+            {
+                AnimatorComp.SetTrigger(ThrowKey);
+                _throwCooldown.Reset();
+            }
         }
 
     }

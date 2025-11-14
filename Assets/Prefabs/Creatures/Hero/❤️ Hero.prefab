@@ -373,7 +373,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -677472283
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 4
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3e2aa9285cdbf43955774fa490df5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.4
+  _radius: 0.6
   _mask:
     serializedVersion: 2
     m_Bits: 12087
@@ -5330,7 +5330,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1839637495
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 5
   m_RenderMode: 0
   m_SortMode: 0
@@ -5442,7 +5442,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1958257387
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 00728dde4f695104e811e8443e877fde, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5493,6 +5493,8 @@ MonoBehaviour:
   _particles: {fileID: 7111335695637610004}
   _dashSpeed: 20
   _dashDuration: 0.1
+  _throwCooldown:
+    _value: 1
   _slamDownVelocity: 14
   _heavyFallSpeed: 14
   _interactionCheck: {fileID: 828418110}
