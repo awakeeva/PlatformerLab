@@ -174,6 +174,7 @@ namespace PixelCrew.Creatures
         public override void TakeDamage()
         {
             base.TakeDamage();
+            _allowDoubleJump = true;
 
             if (_session.Data.SilverCoinCount > 0)
             {
@@ -214,8 +215,15 @@ namespace PixelCrew.Creatures
 
         public void ArmHero()
         {
-            _session.Data.isArmed = true;
-            UpdateHeroWeapon();
+            if (_session.Data.isArmed)
+            {
+                _session.Data.SwordProjectileCount++;
+            }
+            else
+            {
+                _session.Data.isArmed = true;
+                UpdateHeroWeapon();
+            }
         }
 
         private void UpdateHeroWeapon()
@@ -236,9 +244,10 @@ namespace PixelCrew.Creatures
 
         public void Throw()
         {
-            if (_throwCooldown.IsReady)
+            if (_throwCooldown.IsReady && _session.Data.SwordProjectileCount>0)
             {
                 AnimatorComp.SetTrigger(ThrowKey);
+                _session.Data.SwordProjectileCount--;
                 _throwCooldown.Reset();
             }
         }

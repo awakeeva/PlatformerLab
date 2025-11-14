@@ -9,6 +9,7 @@ namespace PixelCrew.Model
         public int GoldCoinCount = 0;
 
         public bool isArmed;
+        public int SwordProjectileCount;
 
         public int FullHealth;
         public int Health;

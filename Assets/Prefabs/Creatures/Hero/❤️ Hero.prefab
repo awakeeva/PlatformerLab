@@ -5483,7 +5483,7 @@ MonoBehaviour:
   _invertScale: 0
   _speed: 5
   _jumpSpeed: 12
-  _takeDamageJumpSpeed: 5
+  _takeDamageJumpSpeed: 8
   _fallDamageSpeed: 25
   _groundCheck: {fileID: 661183055147761082}
   _groundLayer:
