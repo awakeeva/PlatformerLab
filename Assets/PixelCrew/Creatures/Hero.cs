@@ -38,9 +38,6 @@ namespace PixelCrew.Creatures
         private bool _isDashOn;
         private float _dashTimer;
 
-        [Header("Sword Effects")]
-        [SerializeField] private GameObject _StabbingBlowEffect;
-
         private const int SilverCoinCost = 1;
         private const int GoldCoinCost = 10;
 
@@ -230,11 +227,6 @@ namespace PixelCrew.Creatures
         {
             AnimatorComp.runtimeAnimatorController =
                 _session.Data.isArmed ? _armed : _disarmed;
-        }
-
-        public void SpawnStabbingBlowEffect()
-        {
-            _StabbingBlowEffect.SetActive(true);
         }
 
         public void OnDoThrow()

@@ -152,6 +152,7 @@ namespace PixelCrew.Creatures
         public void OnDoAttack()
         {
             _attackRange.Check();
+            _particles.Spawn("Slash");
         }
     }
 }

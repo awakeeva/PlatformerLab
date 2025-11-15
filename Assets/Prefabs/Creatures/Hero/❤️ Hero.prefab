@@ -304,123 +304,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 661183055412184889}
   _prefab: {fileID: 1287163465055113998, guid: 9c88bb43f37744447af3dd2642402b52, type: 3}
---- !u!1 &661183055492346416
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 661183055492346419}
-  - component: {fileID: 661183055492346414}
-  - component: {fileID: 661183055492346415}
-  m_Layer: 12
-  m_Name: StabbingBlowEffect
-  m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &661183055492346419
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661183055492346416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.736, y: -0.097, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 661183055954219100}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &661183055492346414
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661183055492346416}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -677472283
-  m_SortingLayer: 6
-  m_SortingOrder: 4
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.875, y: 0.53125}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!114 &661183055492346415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661183055492346416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cd1e2e2139e544ab6ca66e953bdd37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _frameRate: 10
-  _clips:
-  - _name: active
-    _sprites:
-    - {fileID: 21300000, guid: a2fea6e3b23af3d4b95348c8eba0f8d8, type: 3}
-    - {fileID: 21300000, guid: 93d41d2b5b2c0194f9579e8ab9849289, type: 3}
-    - {fileID: 21300000, guid: 4aa1fb1b30f0dc8459b4f37259a7573d, type: 3}
-    _loop: 0
-    _allowNextClip: 1
-    _onComplete:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 661183055492346416}
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &661183055547531807
 GameObject:
   m_ObjectHideFlags: 0
@@ -5396,7 +5279,7 @@ Transform:
   - {fileID: 661183055726721549}
   - {fileID: 661183055412184889}
   - {fileID: 661183055162066513}
-  - {fileID: 661183055492346419}
+  - {fileID: 1128135421708806513}
   - {fileID: 661183055756852437}
   - {fileID: 661183055547531804}
   - {fileID: 2261646059112996023}
@@ -5502,7 +5385,6 @@ MonoBehaviour:
   _armed: {fileID: 9100000, guid: 452cf04eee1b40b47ac07a6a1f0ee2d6, type: 2}
   _disarmed: {fileID: 9100000, guid: 3e7c596d127c79e468d95e2a73c9de3b, type: 2}
   _hitParticles: {fileID: 661183055756852436}
-  _StabbingBlowEffect: {fileID: 661183055492346416}
 --- !u!114 &661183055954219099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5745,6 +5627,8 @@ MonoBehaviour:
     Component: {fileID: 661183055162066510}
   - Id: ThrowSword
     Component: {fileID: 8710448497385236119}
+  - Id: Slash
+    Component: {fileID: 1356695194193689074}
 --- !u!114 &1187291199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5757,6 +5641,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d684bba53ca9b234ba7e349a0b8516a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6675030060765090764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1128135421708806513}
+  - component: {fileID: 1356695194193689074}
+  m_Layer: 12
+  m_Name: SwordSlashPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1128135421708806513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6675030060765090764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.644, y: -0.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 661183055954219100}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356695194193689074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6675030060765090764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87e7d58850b6ca449ca1c88f7d3a207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1128135421708806513}
+  _prefab: {fileID: 5754144168907449715, guid: ea043a67ff8909b4aa8ea7de80bb9444, type: 3}
 --- !u!1 &8738404135772363216
 GameObject:
   m_ObjectHideFlags: 0
