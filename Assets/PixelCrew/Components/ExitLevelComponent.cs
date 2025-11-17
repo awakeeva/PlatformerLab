@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Model;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Components
@@ -8,6 +9,8 @@ namespace PixelCrew.Components
         [SerializeField] private string _sceneName;
         public void Exit()
         {
+            var session = FindObjectOfType<GameSession>();
+            session.Save();
             SceneManager.LoadScene(_sceneName);
         }
     }
