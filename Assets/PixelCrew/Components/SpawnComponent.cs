@@ -10,8 +10,9 @@ namespace PixelCrew.Components
         [ContextMenu("Spawn")]
         public void Spawn()
         {
-            var instantiate = Instantiate(_prefab, _target.position, Quaternion.identity);
-            instantiate.transform.localScale = _target.lossyScale;
+            var instance = Instantiate(_prefab, _target.position, Quaternion.identity);
+            instance.transform.localScale = _target.lossyScale;
+            instance.SetActive(true);
         }
     }
 }
