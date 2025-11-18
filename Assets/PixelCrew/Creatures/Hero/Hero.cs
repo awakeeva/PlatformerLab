@@ -33,6 +33,7 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private ParticleSystem _hitParticles;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
+        private static readonly int IsOnWallKey = Animator.StringToHash("is-on-wall");
 
         private bool _allowDoubleJump;
 
@@ -72,7 +73,8 @@ namespace PixelCrew.Creatures.Hero
         {
             base.Update();
 
-            if (_wallCheck.IsTouchingLayer && Direction.x == transform.localScale.x)
+            var moveToSameDirection = Direction.x * transform.localScale.x > 0;
+            if (_wallCheck.IsTouchingLayer && moveToSameDirection)
             {
                 _isOnWall = true;
                 RigidbodyComp.gravityScale = 0;
@@ -82,6 +84,8 @@ namespace PixelCrew.Creatures.Hero
                 _isOnWall = false;
                 RigidbodyComp.gravityScale = _defaultGravityScale;
             }
+
+            AnimatorComp.SetBool(IsOnWallKey, _isOnWall);
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -142,7 +146,7 @@ namespace PixelCrew.Creatures.Hero
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!IsGrounded && _allowDoubleJump)
+            if (!IsGrounded && _allowDoubleJump && !_isOnWall)
             {
                 _allowDoubleJump = false;
                 HasJustJumpedFlag = true;
