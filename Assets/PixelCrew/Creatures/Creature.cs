@@ -1,5 +1,7 @@
-﻿using PixelCrew.Components;
+﻿using PixelCrew.Components.ColliderBased;
 using UnityEngine;
+using PixelCrew.Components.GoBased;
+using PixelCrew.Components.Health;
 
 namespace PixelCrew.Creatures
 {
