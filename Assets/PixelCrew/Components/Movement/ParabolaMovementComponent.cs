@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Movement
 {
     public class ParabolaMovementComponent : MonoBehaviour
     {
