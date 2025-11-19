@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 828418108}
   - component: {fileID: 828418110}
   - component: {fileID: 5940951590833413791}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: InteractionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1883179478}
   - component: {fileID: 1883179480}
   - component: {fileID: 1883179479}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 661183055147761084}
   - component: {fileID: 661183055147761082}
   - component: {fileID: 661183055147761085}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

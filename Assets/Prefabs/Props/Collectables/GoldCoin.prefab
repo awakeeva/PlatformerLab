@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3791448540895762619}
   - component: {fileID: 3791448540895762617}
   - component: {fileID: 3791448540895762618}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Destroi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -677472283
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: -4986890610287934012, guid: 800c1f1eb169b0f459604d864b3d1a06,
     type: 3}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 3791448541220255601}
   - component: {fileID: 3791448541220255604}
   - component: {fileID: 3791448541220255611}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GoldCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -677472283
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 6582046967323461550, guid: 800c1f1eb169b0f459604d864b3d1a06,
     type: 3}
@@ -233,6 +233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:
