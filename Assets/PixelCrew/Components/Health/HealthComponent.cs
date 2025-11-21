@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +10,9 @@ namespace PixelCrew.Components.Health
     {
         [SerializeField] private int _fullHealth;
         [SerializeField] private int _health;
+
+        [SerializeField] private bool _modeModularHealth;
+
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] private UnityEvent _onDie;
@@ -21,6 +26,43 @@ namespace PixelCrew.Components.Health
         }
 
         public void ModifyHealth(int healthDelta)
+        {
+            if (_modeModularHealth)
+            {
+                ModifyHealthGroup(healthDelta);
+            }
+            else
+            {
+                ModifyHealthSingle(healthDelta);
+            }
+        }
+
+        private void ModifyHealthGroup(int healthDelta)
+        {
+            var parentGO = this.gameObject.transform.parent.gameObject;
+            List<GameObject> listOfChildren = new List<GameObject>();
+
+            foreach (Transform child in parentGO.transform)
+            {
+                if (null == child)
+                    continue;
+                if (null == child.GetComponent<HealthComponent>())
+                    continue;
+
+                listOfChildren.Add(child.gameObject);
+            }
+
+            if (listOfChildren.Count() > 0)
+            {
+                var sortedListOfChildren = listOfChildren.OrderByDescending(go => go.transform.position.y).ToList();
+
+                var healthComponent = sortedListOfChildren[0].GetComponent<HealthComponent>();
+                
+                healthComponent.ModifyHealthSingle(healthDelta);
+            }
+        }
+
+        public void ModifyHealthSingle(int healthDelta)
         {
             if (_isDead) return;
 
