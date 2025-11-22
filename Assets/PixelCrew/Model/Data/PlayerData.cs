@@ -1,11 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-namespace PixelCrew.Model
+namespace PixelCrew.Model.Data
 {
     [Serializable]
     public class PlayerData
     {
+        [SerializeField] private InventoryData _inventory;
+
         public int SilverCoinCount;
         public int GoldCoinCount;
 
