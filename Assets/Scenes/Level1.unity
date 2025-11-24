@@ -3320,6 +3320,76 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!1 &807023316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6562021608320795007, guid: 4e5134f847ef2044eb3ccb9dd3decd8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6562021608667636563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &807023317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807023316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aed503e85238d442a54a178cb4fc5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _required:
+  - Id: Key
+    Value: 1
+  - Id: SilverCoin
+    Value: 5
+  _removeAftreUse: 1
+  _onSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 807023319}
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: open
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 807023320}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onFail:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &807023319 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6562021608320794979, guid: 4e5134f847ef2044eb3ccb9dd3decd8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6562021608667636563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807023316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cd1e2e2139e544ab6ca66e953bdd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &807023320 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6562021608320795004, guid: 4e5134f847ef2044eb3ccb9dd3decd8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6562021608667636563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &816180014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38840,6 +38910,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6562021608320794978, guid: 4e5134f847ef2044eb3ccb9dd3decd8f,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562021608320794978, guid: 4e5134f847ef2044eb3ccb9dd3decd8f,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562021608320794978, guid: 4e5134f847ef2044eb3ccb9dd3decd8f,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 807023317}
+    - target: {fileID: 6562021608320794978, guid: 4e5134f847ef2044eb3ccb9dd3decd8f,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Check
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562021608320794978, guid: 4e5134f847ef2044eb3ccb9dd3decd8f,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562021608320794978, guid: 4e5134f847ef2044eb3ccb9dd3decd8f,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6562021608320795005, guid: 4e5134f847ef2044eb3ccb9dd3decd8f,
         type: 3}
       propertyPath: m_RootOrder
