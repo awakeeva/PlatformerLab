@@ -2,32 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PixelCrew
+public class Hero : MonoBehaviour
 {
-    public class Hero : MonoBehaviour
+    [SerializeField] private float _speed;
+    [SerializeField] private float _jumpSpeed;
+
+    [SerializeField] private LayerCheck _groundCheck;
+
+    private Rigidbody2D _rigidbody;
+    private Vector2 _direction;
+
+    private void Awake()
     {
-        [SerializeField] private float _speed;
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
 
-        private float _direction;
+    public void SetDirection(Vector2 direction)
+    {
+        _direction = direction;
+    }
 
-        public void SetDirection(float direction)
+    private void FixedUpdate()
+    {
+        _rigidbody.velocity = new Vector2(_direction.x * _speed, _rigidbody.velocity.y);
+
+        var isJumping = _direction.y > 0;
+
+        if (isJumping)
         {
-            _direction = direction;
-        }
-
-        void Update()
-        {
-            if (_direction != 0)
+            if (IsGrounded() && _rigidbody.velocity.y <= 0)
             {
-                var delta = _direction * _speed * Time.deltaTime;
-                var newXPosition = transform.position.x + delta;
-                transform.position = new Vector3(newXPosition, transform.position.y, transform.position.z);
+                _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
             }
         }
-
-        public void SaySomething()
+        else if (_rigidbody.velocity.y > 0)
         {
-            Debug.Log("Something!");
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * 0.5f);
         }
+    }
+
+    private bool IsGrounded()
+    {
+        return _groundCheck.IsTouchingLayer;
+    }
+
+    public void SaySomething()
+    {
+        Debug.Log("Something!");
     }
 }
