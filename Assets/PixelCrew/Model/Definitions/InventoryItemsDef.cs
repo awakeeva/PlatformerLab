@@ -9,7 +9,9 @@ namespace PixelCrew.Model.Definitions
     public class InventoryItemsDef : ScriptableObject
     {
         [SerializeField] private ItemDef[] _items;
-
+#if UNITY_EDITOR
+        public ItemDef[] ItemsForEditor => _items;
+#endif
         public ItemDef Get(string id)
         {
             foreach (var itemDef in _items)
