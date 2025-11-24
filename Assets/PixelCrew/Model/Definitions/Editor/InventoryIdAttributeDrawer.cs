@@ -9,8 +9,6 @@ namespace PixelCrew.Model.Definitions.Editor
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            //base.OnGUI(position, property, label);
-
             var defs = DefsFacade.I.Items.ItemsForEditor;
 
             var ids = new List<string>();
@@ -19,7 +17,7 @@ namespace PixelCrew.Model.Definitions.Editor
                 ids.Add(itemDef.Id);
             }
 
-            var index = ids.IndexOf(property.stringValue);
+            var index = Mathf.Max(0, ids.IndexOf(property.stringValue));
             index = EditorGUI.Popup(position, property.displayName, index, ids.ToArray());
             property.stringValue = ids[index];
         }
