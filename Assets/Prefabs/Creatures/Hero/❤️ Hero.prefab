@@ -5486,6 +5486,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8c0badd4-b6a0-4fa9-95ce-0dfaceaf5511
     m_ActionName: Hero/Throw[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 661183055954219101}
+        m_MethodName: OnHeal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dd290049-a46f-41b2-ab74-204f266de831
+    m_ActionName: Hero/Heal[/Keyboard/ctrl]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5538,7 +5553,7 @@ Animator:
   m_GameObject: {fileID: 661183055954219102}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3e7c596d127c79e468d95e2a73c9de3b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 452cf04eee1b40b47ac07a6a1f0ee2d6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5561,6 +5576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fullHealth: 5
   _health: 5
+  _modeModularHealth: 0
   _onDamage:
     m_PersistentCalls:
       m_Calls:

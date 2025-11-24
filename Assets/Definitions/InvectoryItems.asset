@@ -17,3 +17,4 @@ MonoBehaviour:
   - _id: GoldCoin
   - _id: Sword
   - _id: Key
+  - _id: HealthPotion

@@ -34,6 +34,7 @@ namespace PixelCrew.Creatures.Hero
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsOnWallKey = Animator.StringToHash("is-on-wall");
+        private static readonly int HealKey = Animator.StringToHash("heal");
 
         private bool _allowDoubleJump;
 
@@ -42,15 +43,13 @@ namespace PixelCrew.Creatures.Hero
         private bool _isDashOn;
         private float _dashTimer;
 
-        private const int SilverCoinCost = 1;
-        private const int GoldCoinCost = 10;
-
         private GameSession _session;
         private float _defaultGravityScale;
 
         private int SwordCount => _session.Data.Inventory.Count("Sword");
         private int SilverCoinCount => _session.Data.Inventory.Count("SilverCoin");
         private int GoldCoinCount => _session.Data.Inventory.Count("GoldCoin");
+        private int HealthPotionCount => _session.Data.Inventory.Count("HealthPotion");
 
         protected override void Awake()
         {
@@ -252,5 +251,14 @@ namespace PixelCrew.Creatures.Hero
             }
         }
 
+        internal void Heal()
+        {
+            if (HealthPotionCount > 0)
+            {
+                _session.Data.Inventory.Remove("HealthPotion", 1);
+                HealthComp.ModifyHealth(5);
+                AnimatorComp.SetTrigger(HealKey);
+            }
+        }
     }
 }
