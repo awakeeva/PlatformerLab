@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6008857312179986145}
   - component: {fileID: 6008857312179986144}
   - component: {fileID: 6008857312179986147}
-  - component: {fileID: 122684383304214999}
   - component: {fileID: 836906728829495997}
   - component: {fileID: 5330428595879501390}
   - component: {fileID: 4466376900493164450}
+  - component: {fileID: 1455536354366817046}
   m_Layer: 14
   m_Name: SilverCoinParticle
   m_TagString: Untagged
@@ -117,18 +117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 6008857312179986159}
---- !u!114 &122684383304214999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6008857312179986159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d954bea4720e48d489da05a32c250f65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &836906728829495997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,8 +212,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 122684383304214999}
-        m_MethodName: AddSilverCoin
+      - m_Target: {fileID: 1455536354366817046}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -246,3 +234,17 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1455536354366817046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008857312179986159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbed0af7e0981264db6ca6d191e70c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: SilverCoin
+  _count: 1

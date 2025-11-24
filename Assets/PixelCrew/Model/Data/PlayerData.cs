@@ -7,12 +7,7 @@ namespace PixelCrew.Model.Data
     public class PlayerData
     {
         [SerializeField] private InventoryData _inventory;
-
-        public int SilverCoinCount;
-        public int GoldCoinCount;
-
-        public bool isArmed;
-        public int SwordProjectileCount;
+        public InventoryData Inventory => _inventory;
 
         public int FullHealth;
         public int Health;

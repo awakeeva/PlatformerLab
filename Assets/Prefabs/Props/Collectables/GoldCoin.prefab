@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 3791448541220255600}
   - component: {fileID: 3791448541220255601}
   - component: {fileID: 3791448541220255604}
-  - component: {fileID: 3791448541220255611}
+  - component: {fileID: 6971902261967723187}
   m_Layer: 14
   m_Name: GoldCoin
   m_TagString: Untagged
@@ -239,8 +239,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3791448541220255611}
-        m_MethodName: AddGoldCoin
+      - m_Target: {fileID: 6971902261967723187}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -318,7 +318,7 @@ MonoBehaviour:
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3791448541220255611
+--- !u!114 &6971902261967723187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,6 +327,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3791448541220255602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d954bea4720e48d489da05a32c250f65, type: 3}
+  m_Script: {fileID: 11500000, guid: bbed0af7e0981264db6ca6d191e70c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: GoldCoin
+  _count: 1

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7084420894548525956}
   - component: {fileID: 6201528461843631297}
   - component: {fileID: 7564664798522563555}
-  - component: {fileID: 7951061399274739193}
+  - component: {fileID: 8944555669091551033}
   m_Layer: 0
   m_Name: StuckedSword
   m_TagString: Untagged
@@ -181,8 +181,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7951061399274739193}
-        m_MethodName: ArmHero
+      - m_Target: {fileID: 8944555669091551033}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -203,7 +203,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7951061399274739193
+--- !u!114 &8944555669091551033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,6 +212,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3730004256988655958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42f959afa7eeb04698aec32df967b15, type: 3}
+  m_Script: {fileID: 11500000, guid: bbed0af7e0981264db6ca6d191e70c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: Sword
+  _count: 1

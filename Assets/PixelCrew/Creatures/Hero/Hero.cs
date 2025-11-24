@@ -48,6 +48,10 @@ namespace PixelCrew.Creatures.Hero
         private GameSession _session;
         private float _defaultGravityScale;
 
+        private int SwordCount => _session.Data.Inventory.Count("Sword");
+        private int SilverCoinCount => _session.Data.Inventory.Count("SilverCoin");
+        private int GoldCoinCount => _session.Data.Inventory.Count("GoldCoin");
+
         protected override void Awake()
         {
             base.Awake();
@@ -60,7 +64,29 @@ namespace PixelCrew.Creatures.Hero
 
             HealthComp.SetHealth(_session.Data.FullHealth, _session.Data.Health);
 
+            _session.Data.Inventory.onChanged += OnInventoryChanged;
+            _session.Data.Inventory.onChanged += OnInventoryChangedLog;
+
             UpdateHeroWeapon();
+        }
+
+        private void OnDestroy()
+        {
+            _session.Data.Inventory.onChanged -= OnInventoryChanged;
+            _session.Data.Inventory.onChanged -= OnInventoryChangedLog;
+        }
+
+        private void OnInventoryChangedLog(string id, int value)
+        {
+            Debug.Log($"Inventory changed: {id}: {value}");
+        }
+
+        private void OnInventoryChanged(string id, int value)
+        {
+            if (id == "Sword")
+            {
+                UpdateHeroWeapon();
+            }
         }
 
         public void OnHealthChanged(int fullHealth, int currentHealth)
@@ -157,22 +183,9 @@ namespace PixelCrew.Creatures.Hero
             return base.CalculateJumpVelocity(yVelocity);
         }
 
-        public void AddSilverCoin(int coins)
+        public void AddInInventory(string id, int value)
         {
-            _session.Data.SilverCoinCount += coins;
-            LogCoins(coins > 0 ? $"[ADD +{coins}] " : $"[DEL {coins}]");
-        }
-
-        public void AddGoldCoin(int coins)
-        {
-            _session.Data.GoldCoinCount += coins;
-            LogCoins();
-        }
-
-        private void LogCoins(string metka = "[ADD]")
-        {
-            var total = _session.Data.SilverCoinCount * SilverCoinCost + _session.Data.GoldCoinCount * GoldCoinCost;
-            Debug.Log($"{metka} SilverCount ={_session.Data.SilverCoinCount} GoldCount ={_session.Data.GoldCoinCount} TotalMoney ={total}");
+            _session.Data.Inventory.Add(id, value);
         }
 
         public override void TakeDamage()
@@ -180,7 +193,7 @@ namespace PixelCrew.Creatures.Hero
             base.TakeDamage();
             _allowDoubleJump = true;
 
-            if (_session.Data.SilverCoinCount > 0)
+            if (SilverCoinCount > 0)
             {
                 SpawnCoins();
             }
@@ -188,8 +201,8 @@ namespace PixelCrew.Creatures.Hero
 
         public void SpawnCoins()
         {
-            var numCoinsToDispose = Mathf.Min(_session.Data.SilverCoinCount, 5);
-            AddSilverCoin(-numCoinsToDispose);
+            var numCoinsToDispose = Mathf.Min(SilverCoinCount, 5);
+            _session.Data.Inventory.Remove("SilverCoin", numCoinsToDispose);
 
             var burst = _hitParticles.emission.GetBurst(0);
             burst.count = numCoinsToDispose;
@@ -210,30 +223,18 @@ namespace PixelCrew.Creatures.Hero
             _dashTimer = _dashDuration;
         }
 
+
         public override void Attack()
         {
-            if (!_session.Data.isArmed) return;
+            if (SwordCount <= 0) return;
 
             base.Attack();
-        }
-
-        public void ArmHero()
-        {
-            if (_session.Data.isArmed)
-            {
-                _session.Data.SwordProjectileCount++;
-            }
-            else
-            {
-                _session.Data.isArmed = true;
-                UpdateHeroWeapon();
-            }
         }
 
         private void UpdateHeroWeapon()
         {
             AnimatorComp.runtimeAnimatorController =
-                _session.Data.isArmed ? _armed : _disarmed;
+                SwordCount > 0 ? _armed : _disarmed;
         }
 
         public void OnDoThrow()
@@ -243,10 +244,10 @@ namespace PixelCrew.Creatures.Hero
 
         public void Throw()
         {
-            if (_throwCooldown.IsReady && _session.Data.SwordProjectileCount > 0)
+            if (_throwCooldown.IsReady && SwordCount > 1)
             {
                 AnimatorComp.SetTrigger(ThrowKey);
-                _session.Data.SwordProjectileCount--;
+                _session.Data.Inventory.Remove("Sword", 1);
                 _throwCooldown.Reset();
             }
         }

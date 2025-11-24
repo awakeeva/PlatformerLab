@@ -36,10 +36,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3444832735345940322, guid: 800c1f1eb169b0f459604d864b3d1a06,
         type: 3}
+    - target: {fileID: 1455536354366817046, guid: eec2969d201eb8049a95a65214c5322c,
+        type: 3}
+      propertyPath: _id
+      value: GoldCoin
+      objectReference: {fileID: 0}
     - target: {fileID: 4466376900493164450, guid: eec2969d201eb8049a95a65214c5322c,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: AddGoldCoin
+      value: Add
       objectReference: {fileID: 0}
     - target: {fileID: 6008857312179986145, guid: eec2969d201eb8049a95a65214c5322c,
         type: 3}
