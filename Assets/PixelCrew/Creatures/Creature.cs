@@ -2,6 +2,7 @@
 using UnityEngine;
 using PixelCrew.Components.GoBased;
 using PixelCrew.Components.Health;
+using PixelCrew.Components.Audio;
 
 namespace PixelCrew.Creatures
 {
@@ -27,9 +28,9 @@ namespace PixelCrew.Creatures
         protected Rigidbody2D RigidbodyComp;
         protected Vector2 Direction;
         protected Animator AnimatorComp;
+        protected PlaySoundsComponent Sounds;
         protected bool IsGrounded;
         private bool _isJumping;
-        protected bool HasJustJumpedFlag;
         //private bool _isHeavyFall;
 
         private static readonly int isGroundKey = Animator.StringToHash("is-ground");
@@ -43,6 +44,7 @@ namespace PixelCrew.Creatures
         {
             RigidbodyComp = GetComponent<Rigidbody2D>();
             AnimatorComp = GetComponent<Animator>();
+            Sounds = GetComponent<PlaySoundsComponent>();
             HealthComp = GetComponent<HealthComponent>();
         }
 
@@ -77,12 +79,6 @@ namespace PixelCrew.Creatures
             //_animator.SetBool(isHeavyFallKey, _isHeavyFall);
 
             UpdateSpriteDirection(Direction);
-
-            if (HasJustJumpedFlag)
-            {
-                HasJustJumpedFlag = false;
-                _particles.Spawn("JumpDust");
-            }
         }
 
         protected virtual float CalculateXVelocity()
@@ -119,10 +115,16 @@ namespace PixelCrew.Creatures
             if (IsGrounded)
             {
                 yVelocity = _jumpSpeed;
-                HasJustJumpedFlag = true;
+                DoJumpVfx();
             }
 
             return yVelocity;
+        }
+
+        protected void DoJumpVfx()
+        {
+            _particles.Spawn("JumpDust");
+            if (Sounds != null) Sounds.Play("Jump");
         }
 
         public void UpdateSpriteDirection(Vector2 direction)
@@ -149,8 +151,9 @@ namespace PixelCrew.Creatures
         public virtual void Attack()
         {
             AnimatorComp.SetTrigger(AttackKey);
+            if (Sounds != null) Sounds.Play("Melee");
         }
-        
+
         public void OnDoAttack()
         {
             _attackRange.Check();

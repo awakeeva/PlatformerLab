@@ -174,7 +174,7 @@ namespace PixelCrew.Creatures.Hero
             if (!IsGrounded && _allowDoubleJump && !_isOnWall)
             {
                 _allowDoubleJump = false;
-                HasJustJumpedFlag = true;
+                DoJumpVfx();
 
                 return _jumpSpeed;
             }
@@ -245,6 +245,7 @@ namespace PixelCrew.Creatures.Hero
         {
             if (_throwCooldown.IsReady && SwordCount > 1)
             {
+                if (Sounds != null) Sounds.Play("Range");
                 AnimatorComp.SetTrigger(ThrowKey);
                 _session.Data.Inventory.Remove("Sword", 1);
                 _throwCooldown.Reset();
