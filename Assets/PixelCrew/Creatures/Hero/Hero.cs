@@ -6,10 +6,11 @@ using PixelCrew.Model;
 using System;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Creatures;
+using PixelCrew.Model.Data;
 
 namespace PixelCrew.Creatures.Hero
 {
-    public class Hero : Creature
+    public class Hero : Creature, ICanAddInInventory
     {
         [Header("HERO")]
         [SerializeField] private float _dashSpeed;
