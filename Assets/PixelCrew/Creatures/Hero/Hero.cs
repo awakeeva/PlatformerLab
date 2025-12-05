@@ -23,7 +23,7 @@ namespace PixelCrew.Creatures.Hero
 
         [SerializeField] private CheckCircleOverlap _interactionCheck;
 
-        [SerializeField] private LayerCheck _wallCheck;
+        [SerializeField] private ColliderCheck _wallCheck;
 
         [SerializeField] private UnityEditor.Animations.AnimatorController _armed;
         [SerializeField] private UnityEditor.Animations.AnimatorController _disarmed;

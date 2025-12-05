@@ -2,7 +2,7 @@
 
 namespace PixelCrew.Components.ColliderBased
 {
-    public class LayerCheck : MonoBehaviour
+    public class ColliderCheck : MonoBehaviour
     {
         [SerializeField] private LayerMask _layer;
         [SerializeField] private bool _isTouchingLayer;

@@ -17,7 +17,7 @@ namespace PixelCrew.Creatures
         [SerializeField] protected float _fallDamageSpeed;
 
         [Header("Checkers")]
-        [SerializeField] private LayerCheck _groundCheck;
+        [SerializeField] private ColliderCheck _groundCheck;
         [SerializeField] protected LayerMask _groundLayer;
 
         [SerializeField] private CheckCircleOverlap _attackRange;

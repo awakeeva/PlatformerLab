@@ -8,7 +8,7 @@ namespace PixelCrew.Creatures.Mobs
 {
     public class ModularTrapItemAI : MonoBehaviour
     {
-        [SerializeField] private LayerCheck _vision;
+        [SerializeField] private ColliderCheck _vision;
         public bool VisionIsTouchingLayer => _vision.IsTouchingLayer;
 
         [Header("Range")]
