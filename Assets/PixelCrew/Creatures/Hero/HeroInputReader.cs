@@ -32,8 +32,15 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnThrow(InputAction.CallbackContext context)
         {
-            if (context.performed)
-                _hero.Throw();
+            if (context.started)
+            {
+                _hero.StartThrowing();
+            }
+
+            if (context.canceled)
+            {
+                _hero.PerformThrowing();
+            }
         }
 
         public void OnHeal(InputAction.CallbackContext context)

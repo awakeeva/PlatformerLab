@@ -7,6 +7,7 @@ using System;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Creatures;
 using PixelCrew.Model.Data;
+using System.Collections;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -28,6 +29,11 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private UnityEditor.Animations.AnimatorController _armed;
         [SerializeField] private UnityEditor.Animations.AnimatorController _disarmed;
 
+        [Space]
+        [Header("Super throw")]
+        [SerializeField] private Cooldown _superThrowCooldown;
+        [SerializeField] private int _superThrowParticles;
+        [SerializeField] private float _superThrowDelay;
 
         [Space]
         [Header("Particles")]
@@ -40,6 +46,7 @@ namespace PixelCrew.Creatures.Hero
         private bool _allowDoubleJump;
 
         private bool _isOnWall;
+        private bool _superThrow;
 
         private bool _isDashOn;
         private float _dashTimer;
@@ -239,18 +246,33 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnDoThrow()
         {
-            _particles.Spawn("ThrowSword");
+            if (_superThrow)
+            {
+                var numThrows = Mathf.Min(_superThrowParticles, SwordCount - 1);
+                StartCoroutine(DoSuperThrow(numThrows));
+            }
+            else
+            {
+                ThrowAndRemoveFromInventory();
+            }
+
+            _superThrow = false;
         }
 
-        public void Throw()
+        private IEnumerator DoSuperThrow(int numThrows)
         {
-            if (_throwCooldown.IsReady && SwordCount > 1)
+            for (int i = 0; i < numThrows; i++)
             {
-                if (Sounds != null) Sounds.Play("Range");
-                AnimatorComp.SetTrigger(ThrowKey);
-                _session.Data.Inventory.Remove("Sword", 1);
-                _throwCooldown.Reset();
-            }
+                ThrowAndRemoveFromInventory();
+                yield return new WaitForSeconds(_superThrowDelay);
+            };
+        }
+
+        private void ThrowAndRemoveFromInventory()
+        {
+            if (Sounds != null) Sounds.Play("Range");
+            _particles.Spawn("ThrowSword");
+            _session.Data.Inventory.Remove("Sword", 1);
         }
 
         internal void Heal()
@@ -261,6 +283,21 @@ namespace PixelCrew.Creatures.Hero
                 HealthComp.ModifyHealth(5);
                 AnimatorComp.SetTrigger(HealKey);
             }
+        }
+
+        public void StartThrowing()
+        {
+            _superThrowCooldown.Reset();
+        }
+
+        public void PerformThrowing()
+        {
+            if (!_throwCooldown.IsReady || SwordCount <= 1) return;
+
+            if (_superThrowCooldown.IsReady) _superThrow = true;
+
+            AnimatorComp.SetTrigger(ThrowKey);
+            _throwCooldown.Reset();
         }
     }
 }
