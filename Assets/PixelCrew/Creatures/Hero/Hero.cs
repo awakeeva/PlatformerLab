@@ -36,8 +36,8 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private float _superThrowDelay;
 
         [Space]
-        [Header("Particles")]
-        [SerializeField] private ParticleSystem _hitParticles;
+        [Header("HitDrop")]
+        [SerializeField] private ProbabilityDropComponent _hitDrop;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsOnWallKey = Animator.StringToHash("is-on-wall");
@@ -211,12 +211,8 @@ namespace PixelCrew.Creatures.Hero
             var numCoinsToDispose = Mathf.Min(SilverCoinCount, 5);
             _session.Data.Inventory.Remove("SilverCoin", numCoinsToDispose);
 
-            var burst = _hitParticles.emission.GetBurst(0);
-            burst.count = numCoinsToDispose;
-            _hitParticles.emission.SetBurst(0, burst);
-
-            _hitParticles.gameObject.SetActive(true);
-            _hitParticles.Play();
+            _hitDrop.SetCount(numCoinsToDispose);
+            _hitDrop.CalculateDrop();
         }
 
         public void Interact()

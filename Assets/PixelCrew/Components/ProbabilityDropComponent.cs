@@ -48,6 +48,11 @@ namespace PixelCrew.Components
             _onDropCalculated?.Invoke(itemsToDrop);
         }
 
+        public void SetCount(int count)
+        {
+            _count = count;
+        }
+
         [Serializable]
         public class DropData
         {

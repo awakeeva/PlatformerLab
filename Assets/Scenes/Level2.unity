@@ -441,6 +441,8 @@ MonoBehaviour:
       _inventory:
       - Id: Sword
         Value: 15
+      - Id: SilverCoin
+        Value: 50
     FullHealth: 10
     Health: 10
 --- !u!4 &238192797 stripped
