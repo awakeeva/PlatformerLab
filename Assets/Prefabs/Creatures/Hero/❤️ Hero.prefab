@@ -229,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 661183055147761084}
   - component: {fileID: 661183055147761082}
-  - component: {fileID: 661183055147761085}
+  - component: {fileID: 1790700586671261676}
   m_Layer: 15
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -267,8 +267,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _isTouchingLayer: 0
---- !u!61 &661183055147761085
-BoxCollider2D:
+--- !u!58 &1790700586671261676
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -280,19 +280,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.019275665, y: -0.29938743}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.012851715, y: -0.26120138}
   serializedVersion: 2
-  m_Size: {x: 0.47782135, y: 0.1787749}
-  m_EdgeRadius: 0
+  m_Radius: 0.25548172
 --- !u!1 &661183055162066512
 GameObject:
   m_ObjectHideFlags: 0
