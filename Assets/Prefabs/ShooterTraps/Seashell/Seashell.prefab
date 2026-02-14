@@ -440,6 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fullHealth: 2
   _health: 2
+  _modeModularHealth: 0
   _onDamage:
     m_PersistentCalls:
       m_Calls:

@@ -73,8 +73,10 @@ namespace PixelCrew.Creatures
             //    _isHeavyFall = false;
             //}
 
+            float rigidBodyVelocityY = (float)System.Math.Round(RigidbodyComp.velocity.y, 2);
+
             AnimatorComp.SetBool(isGroundKey, IsGrounded);
-            AnimatorComp.SetFloat(VerticalVelocityKey, RigidbodyComp.velocity.y);
+            AnimatorComp.SetFloat(VerticalVelocityKey, rigidBodyVelocityY);
             AnimatorComp.SetBool(isRunningKey, Direction.x != 0);
             //_animator.SetBool(isHeavyFallKey, _isHeavyFall);
 
