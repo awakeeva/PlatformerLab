@@ -24,6 +24,9 @@ namespace PixelCrew.Creatures
 
         [SerializeField] protected SpawnListComponent _particles;
 
+        [Header("Ability")]
+        [SerializeField] private bool abilityDeadbodyBurst;
+
         protected HealthComponent HealthComp;
         protected Rigidbody2D RigidbodyComp;
         protected Vector2 Direction;
@@ -39,6 +42,7 @@ namespace PixelCrew.Creatures
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
         private static readonly int HitKey = Animator.StringToHash("hit");
         private static readonly int AttackKey = Animator.StringToHash("attack");
+        private static readonly int AbilityDeadbodyBurstKey = Animator.StringToHash("ability-deadbody-burst");
 
         protected virtual void Awake()
         {
@@ -46,6 +50,11 @@ namespace PixelCrew.Creatures
             AnimatorComp = GetComponent<Animator>();
             Sounds = GetComponent<PlaySoundsComponent>();
             HealthComp = GetComponent<HealthComponent>();
+        }
+
+        private void OnEnable()
+        {
+            AnimatorComp.SetBool(AbilityDeadbodyBurstKey, abilityDeadbodyBurst);
         }
 
         public void SetDirection(Vector2 direction)
