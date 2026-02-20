@@ -161,8 +161,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 238892737}
+  - component: {fileID: 1303350045}
   m_Layer: 5
-  m_Name: VolumeItem
+  m_Name: MusicOption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,6 +191,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 77.41336, y: 31.307663}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1303350045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238892736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07580fdabbe251943b9794c2f93e2b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 373076269}
+  _value: {fileID: 1647620504}
 --- !u!1 &373076267
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,8 +437,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 30.9, y: -21.3}
-  m_SizeDelta: {x: 14.091461, y: 13.932003}
+  m_AnchoredPosition: {x: 31.62, y: -21.3}
+  m_SizeDelta: {x: 15.528046, y: 13.932003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1647620505
 CanvasRenderer:
@@ -465,7 +480,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 98
+  m_Text: 100
 --- !u!1 &674902147927502984
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,8 +603,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 30.9, y: -21.3}
-  m_SizeDelta: {x: 14.091461, y: 13.932003}
+  m_AnchoredPosition: {x: 31.62, y: -21.3}
+  m_SizeDelta: {x: 15.528046, y: 13.932003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6711548287139048091
 CanvasRenderer:
@@ -631,7 +646,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 98
+  m_Text: 100
 --- !u!1 &2118539294050448416
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +921,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2628312591343462304}
+      - m_Target: {fileID: 1303350039}
         m_MethodName: Close
         m_Mode: 1
         m_Arguments:
@@ -1085,7 +1100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2628312591343462305}
   - component: {fileID: 2628312591343462311}
-  - component: {fileID: 2628312591343462304}
+  - component: {fileID: 1303350039}
   m_Layer: 0
   m_Name: SettingsWindow
   m_TagString: Untagged
@@ -1132,7 +1147,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2628312591343462304
+--- !u!114 &1303350039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1141,9 +1156,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2628312591343462306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ffcbaa0580ef4d4c80c78911d754ece, type: 3}
+  m_Script: {fileID: 11500000, guid: 66d015e74f49a0e4789bd89cb28fe733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _music: {fileID: 1303350045}
+  _sfx: {fileID: 1303350044}
 --- !u!1 &2628312591718388249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,8 +1436,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1914793920497592146}
+  - component: {fileID: 1303350044}
   m_Layer: 5
-  m_Name: VolumeItem (1)
+  m_Name: SfxOption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1448,6 +1466,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 77.41336, y: 31.307663}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1303350044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6377435929577610227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07580fdabbe251943b9794c2f93e2b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 8663343054562596516}
+  _value: {fileID: 2842652391791329461}
 --- !u!1 &6573643992373679124
 GameObject:
   m_ObjectHideFlags: 0
