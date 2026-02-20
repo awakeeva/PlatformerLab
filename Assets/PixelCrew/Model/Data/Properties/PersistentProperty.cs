@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace PixelCrew.Model.Data.Properties
 {
+    [Serializable]
     public abstract class PersistentProperty<TPropertyType>
     {
         [SerializeField] private TPropertyType _value;
