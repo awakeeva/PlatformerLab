@@ -3220,8 +3220,6 @@ MonoBehaviour:
   _required:
   - Id: Key
     Value: 1
-  - Id: SilverCoin
-    Value: 5
   _removeAftreUse: 1
   _onSuccess:
     m_PersistentCalls:
@@ -38526,8 +38524,9 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory: []
-    FullHealth: 5
-    Health: 5
+    FullHealth: 10
+    Hp:
+      _value: 10
 --- !u!1001 &2081072957
 PrefabInstance:
   m_ObjectHideFlags: 0
