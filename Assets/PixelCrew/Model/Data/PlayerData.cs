@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixelCrew.Model.Data.Properties;
+using System;
 using UnityEngine;
 
 namespace PixelCrew.Model.Data
@@ -10,7 +11,7 @@ namespace PixelCrew.Model.Data
         public InventoryData Inventory => _inventory;
 
         public int FullHealth;
-        public int Health;
+        public IntProperty Hp = new IntProperty();
 
         public PlayerData Clone()
         {

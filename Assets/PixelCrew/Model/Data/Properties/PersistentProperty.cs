@@ -6,9 +6,9 @@ namespace PixelCrew.Model.Data.Properties
     [Serializable]
     public abstract class PersistentProperty<TPropertyType>
     {
-        [SerializeField] private TPropertyType _value;
+        [SerializeField] protected TPropertyType _value;
         private TPropertyType _defaultValue;
-        private TPropertyType _stored;
+        protected TPropertyType _stored;
 
         public delegate void OnPropertyChanged(TPropertyType newValue, TPropertyType oldValue);
 

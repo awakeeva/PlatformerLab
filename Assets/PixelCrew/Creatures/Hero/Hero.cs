@@ -69,7 +69,7 @@ namespace PixelCrew.Creatures.Hero
         {
             _session = FindObjectOfType<GameSession>();
 
-            HealthComp.SetHealth(_session.Data.FullHealth, _session.Data.Health);
+            HealthComp.SetHealth(_session.Data.FullHealth, _session.Data.Hp.Value);
 
             _session.Data.Inventory.onChanged += OnInventoryChanged;
             _session.Data.Inventory.onChanged += OnInventoryChangedLog;
@@ -99,7 +99,7 @@ namespace PixelCrew.Creatures.Hero
         public void OnHealthChanged(int fullHealth, int currentHealth)
         {
             _session.Data.FullHealth = fullHealth;
-            _session.Data.Health = currentHealth;
+            _session.Data.Hp.Value = currentHealth;
         }
 
         protected override void Update()
