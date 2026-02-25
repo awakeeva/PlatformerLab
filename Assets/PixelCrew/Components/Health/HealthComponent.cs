@@ -15,7 +15,7 @@ namespace PixelCrew.Components.Health
 
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
-        [SerializeField] private UnityEvent _onDie;
+        [SerializeField] public UnityEvent _onDie;
         [SerializeField] private HealthChangeEvent _onChange;
 
         private bool _isDead;
@@ -113,6 +113,11 @@ namespace PixelCrew.Components.Health
         {
             _fullHealth = fullHealth;
             _health = currentHealth;
+        }
+
+        private void OnDestroy()
+        {
+            _onDie.RemoveAllListeners();
         }
 
         [Serializable]

@@ -420,7 +420,7 @@ MonoBehaviour:
   _radius: 0.6
   _mask:
     serializedVersion: 2
-    m_Bits: 12087
+    m_Bits: 77623
   _onOverlap:
     m_PersistentCalls:
       m_Calls:
@@ -944,7 +944,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130e5b52b74647e4c860c8865efd751a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
   _sounds:
   - _id: Jump
     _clip: {fileID: 8300000, guid: ed71c697a33d3da48b0362f37a8b9e6e, type: 3}
