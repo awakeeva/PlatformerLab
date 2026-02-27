@@ -1,4 +1,6 @@
 ﻿using PixelCrew.Model.Data.Properties;
+using PixelCrew.Model.Definitions;
+using PixelCrew.Utils.Disposables;
 using System;
 using UnityEngine;
 
@@ -12,18 +14,32 @@ namespace PixelCrew.Model.Data
 
         public readonly IntProperty SelectedIndex = new IntProperty();
 
+        public event Action OnChanged;
+
         public QuickInvetoryModel(PlayerData data)
         {
             this._data = data;
 
-            Inventory = _data.Inventory.GetAll();
-            _data.Inventory.onChanged += OnChanged;
+            Inventory = _data.Inventory.GetAll(ItemTag.Usable);
+            _data.Inventory.onChanged += OnChangedInventory;
         }
 
-        private void OnChanged(string id, int value)
+        public IDisposable Subscribe(Action call)
         {
-            Inventory = _data.Inventory.GetAll();
-            SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, Inventory.Length - 1);
+            OnChanged += call;
+            return new ActionDisposable( () => OnChanged -= call);
+        }
+
+        private void OnChangedInventory(string id, int value)
+        {
+            var indexFound = Array.FindIndex(Inventory, x => x.Id == id);
+
+            if (indexFound != -1)
+            {
+                Inventory = _data.Inventory.GetAll(ItemTag.Usable);
+                SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, Inventory.Length - 1);
+                OnChanged?.Invoke();
+            }
         }
     }
 }

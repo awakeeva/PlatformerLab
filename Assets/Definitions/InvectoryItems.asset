@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - _id: SilverCoin
-    _isStackable: 1
     _icon: {fileID: -2322180950842035098, guid: 800c1f1eb169b0f459604d864b3d1a06,
       type: 3}
+    _tags: 00000000
   - _id: GoldCoin
-    _isStackable: 1
     _icon: {fileID: 6582046967323461550, guid: 800c1f1eb169b0f459604d864b3d1a06, type: 3}
+    _tags: 00000000
   - _id: Sword
-    _isStackable: 1
     _icon: {fileID: 21300000, guid: 207c74b8cb8713e46b0586ba9f0ff29e, type: 3}
+    _tags: 000000000100000002000000
   - _id: Key
-    _isStackable: 0
     _icon: {fileID: 21300000, guid: 79a4bd38c5516454a9a8a259363e0745, type: 3}
+    _tags: 
   - _id: HealthPotion
-    _isStackable: 0
     _icon: {fileID: 3714227102187029162, guid: c8b37fa9e3d5f4c4cbfcf944746797de, type: 3}
+    _tags: 
