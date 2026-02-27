@@ -40145,7 +40145,7 @@ MonoBehaviour:
     _inventory:
       _inventory:
       - Id: SilverCoin
-        Value: 2
+        Value: 22
       - Id: Sword
         Value: 5
       - Id: Key

@@ -12,6 +12,8 @@ namespace PixelCrew.Model
         public PlayerData Data => _data;
         private PlayerData _save;
 
+        public QuickInvetoryModel QuickInvetory { get; private set; }
+
         public void Save()
         {
             _save = _data.Clone();
@@ -34,7 +36,13 @@ namespace PixelCrew.Model
             {
                 DontDestroyOnLoad(this);
                 Save();
+                InitModels();
             }
+        }
+
+        private void InitModels()
+        {
+            QuickInvetory = new QuickInvetoryModel(Data);
         }
 
         private void LoadHud()

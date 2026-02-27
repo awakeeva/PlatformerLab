@@ -1,6 +1,8 @@
-﻿using PixelCrew.Model.Data;
+﻿using PixelCrew.Model;
+using PixelCrew.Model.Data;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Utils.Disposables;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +17,17 @@ namespace PixelCrew.UI.Hud.QuickInventory
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         private int _index;
+
+        private void Start()
+        {
+            var session = FindObjectOfType<GameSession>();
+            session.QuickInvetory.SelectedIndex.SubscribeAndInvoke(OnIndexChanged);
+        }
+
+        private void OnIndexChanged(int newValue, int oldValue)
+        {
+            _selection.SetActive(_index == newValue);
+        }
 
         public void SetData(InventoryItemData item, int index)
         {
