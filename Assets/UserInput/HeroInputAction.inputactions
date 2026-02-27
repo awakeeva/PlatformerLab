@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Heal",
+                    "name": "NextItem",
                     "type": "Button",
                     "id": "dd290049-a46f-41b2-ab74-204f266de831",
                     "expectedControlType": "Button",
@@ -218,11 +218,11 @@
                 {
                     "name": "",
                     "id": "52963035-e857-4c31-98e2-997e48c604ac",
-                    "path": "<Keyboard>/ctrl",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Heal",
+                    "action": "NextItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

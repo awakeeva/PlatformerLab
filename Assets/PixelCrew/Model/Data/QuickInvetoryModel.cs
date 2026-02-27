@@ -41,6 +41,11 @@ namespace PixelCrew.Model.Data
                 OnChanged?.Invoke();
             }
         }
+
+        public void SetNextItem()
+        {
+            SelectedIndex.Value = (int)Mathf.Repeat(SelectedIndex.Value + 1, Inventory.Length);
+        }
     }
 }
 

@@ -271,15 +271,15 @@ namespace PixelCrew.Creatures.Hero
             _session.Data.Inventory.Remove("Sword", 1);
         }
 
-        internal void Heal()
-        {
-            if (HealthPotionCount > 0)
-            {
-                _session.Data.Inventory.Remove("HealthPotion", 1);
-                HealthComp.ModifyHealth(5);
-                AnimatorComp.SetTrigger(HealKey);
-            }
-        }
+        //public void Heal()
+        //{
+        //    if (HealthPotionCount > 0)
+        //    {
+        //        _session.Data.Inventory.Remove("HealthPotion", 1);
+        //        HealthComp.ModifyHealth(5);
+        //        AnimatorComp.SetTrigger(HealKey);
+        //    }
+        //}
 
         public void StartThrowing()
         {
@@ -294,6 +294,11 @@ namespace PixelCrew.Creatures.Hero
 
             AnimatorComp.SetTrigger(ThrowKey);
             _throwCooldown.Reset();
+        }
+
+        public void NextItem()
+        {
+            _session.QuickInvetory.SetNextItem();
         }
     }
 }

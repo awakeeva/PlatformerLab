@@ -16,7 +16,7 @@ MonoBehaviour:
   - _id: SilverCoin
     _icon: {fileID: -2322180950842035098, guid: 800c1f1eb169b0f459604d864b3d1a06,
       type: 3}
-    _tags: 00000000
+    _tags: 0000000001000000
   - _id: GoldCoin
     _icon: {fileID: 6582046967323461550, guid: 800c1f1eb169b0f459604d864b3d1a06, type: 3}
     _tags: 00000000

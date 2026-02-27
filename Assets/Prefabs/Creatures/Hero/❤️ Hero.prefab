@@ -753,7 +753,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 661183055954219101}
-        m_MethodName: OnHeal
+        m_MethodName: OnNextItem
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
