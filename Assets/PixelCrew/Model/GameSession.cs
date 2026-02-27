@@ -12,7 +12,7 @@ namespace PixelCrew.Model
         public PlayerData Data => _data;
         private PlayerData _save;
 
-        public QuickInvetoryModel QuickInvetory { get; private set; }
+        public QuickInventoryModel QuickInventory { get; private set; }
 
         public void Save()
         {
@@ -42,7 +42,7 @@ namespace PixelCrew.Model
 
         private void InitModels()
         {
-            QuickInvetory = new QuickInvetoryModel(Data);
+            QuickInventory = new QuickInventoryModel(Data);
         }
 
         private void LoadHud()

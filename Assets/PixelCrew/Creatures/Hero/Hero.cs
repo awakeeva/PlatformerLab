@@ -8,6 +8,8 @@ using PixelCrew.Components.ColliderBased;
 using PixelCrew.Creatures;
 using PixelCrew.Model.Data;
 using System.Collections;
+using PixelCrew.Components.GoBased;
+using PixelCrew.Model.Definitions;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -39,6 +41,8 @@ namespace PixelCrew.Creatures.Hero
         [Header("HitDrop")]
         [SerializeField] private ProbabilityDropComponent _hitDrop;
 
+        [SerializeField] private SpawnComponent _throwSpawner;
+
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsOnWallKey = Animator.StringToHash("is-on-wall");
         private static readonly int HealKey = Animator.StringToHash("heal");
@@ -54,10 +58,27 @@ namespace PixelCrew.Creatures.Hero
         private GameSession _session;
         private float _defaultGravityScale;
 
-        private int SwordCount => _session.Data.Inventory.Count("Sword");
+
+        private const string SwordId = "Sword";
+        private int SwordCount => _session.Data.Inventory.Count(SwordId);
         private int SilverCoinCount => _session.Data.Inventory.Count("SilverCoin");
         private int GoldCoinCount => _session.Data.Inventory.Count("GoldCoin");
         private int HealthPotionCount => _session.Data.Inventory.Count("HealthPotion");
+
+        private string SelectedItemID => _session.QuickInventory.SelectedItem.Id;
+
+        private bool CanThrow
+        {
+            get
+            {
+                if (SelectedItemID == SwordId)
+                    return SwordCount > 1;
+
+                var def = DefsFacade.I.Items.Get(SelectedItemID);
+
+                return def.HasTag(ItemTag.Throwable);
+            }
+        }
 
         protected override void Awake()
         {
@@ -90,7 +111,7 @@ namespace PixelCrew.Creatures.Hero
 
         private void OnInventoryChanged(string id, int value)
         {
-            if (id == "Sword")
+            if (id == SwordId)
             {
                 UpdateHeroWeapon();
             }
@@ -244,7 +265,10 @@ namespace PixelCrew.Creatures.Hero
         {
             if (_superThrow)
             {
-                var numThrows = Mathf.Min(_superThrowParticles, SwordCount - 1);
+                var throwableCount = _session.Data.Inventory.Count(SelectedItemID);
+                var possibleCount = SelectedItemID == SwordId ? throwableCount - 1 : throwableCount;
+                
+                var numThrows = Mathf.Min(_superThrowParticles, possibleCount);
                 StartCoroutine(DoSuperThrow(numThrows));
             }
             else
@@ -267,8 +291,14 @@ namespace PixelCrew.Creatures.Hero
         private void ThrowAndRemoveFromInventory()
         {
             if (Sounds != null) Sounds.Play("Range");
-            _particles.Spawn("ThrowSword");
-            _session.Data.Inventory.Remove("Sword", 1);
+
+            var throwableId = _session.QuickInventory.SelectedItem.Id;
+            var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
+            _throwSpawner.SetPrefab(throwableDef.Projectile);
+            _throwSpawner.Spawn();
+
+            //_particles.Spawn("ThrowSword");
+            _session.Data.Inventory.Remove(throwableId, 1);
         }
 
         //public void Heal()
@@ -288,7 +318,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void PerformThrowing()
         {
-            if (!_throwCooldown.IsReady || SwordCount <= 1) return;
+            if (!_throwCooldown.IsReady || !CanThrow) return;
 
             if (_superThrowCooldown.IsReady) _superThrow = true;
 
@@ -298,7 +328,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void NextItem()
         {
-            _session.QuickInvetory.SetNextItem();
+            _session.QuickInventory.SetNextItem();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Utils;
+using System;
 using UnityEngine;
 
 namespace PixelCrew.Components.GoBased
@@ -14,6 +15,11 @@ namespace PixelCrew.Components.GoBased
             var instance = SpawnUtils.Spawn(_prefab, _target.position);
             instance.transform.localScale = _target.lossyScale;
             instance.SetActive(true);
+        }
+
+        public void SetPrefab(GameObject prefab)
+        {
+            _prefab = prefab;
         }
     }
 }

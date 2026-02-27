@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace PixelCrew.Model.Data
 {
-    public class QuickInvetoryModel : MonoBehaviour
+    public class QuickInventoryModel
     {
         private readonly PlayerData _data;
 
@@ -16,7 +16,9 @@ namespace PixelCrew.Model.Data
 
         public event Action OnChanged;
 
-        public QuickInvetoryModel(PlayerData data)
+        public InventoryItemData SelectedItem => Inventory[SelectedIndex.Value];
+
+        public QuickInventoryModel(PlayerData data)
         {
             this._data = data;
 

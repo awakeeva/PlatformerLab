@@ -1517,7 +1517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271759421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 62.641205, y: -16.631422, z: -8.605359}
+  m_LocalPosition: {x: -39.8788, y: 11.658579, z: -8.605359}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1470453730}
@@ -2529,7 +2529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 96.41, y: -38.88, z: -10}
+  m_LocalPosition: {x: -6.11, y: -10.59, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 965735053}
@@ -40146,10 +40146,8 @@ MonoBehaviour:
       _inventory:
       - Id: SilverCoin
         Value: 22
-      - Id: Sword
-        Value: 5
-      - Id: Key
-        Value: 1
+      - Id: PearlProjectile
+        Value: 11
     FullHealth: 10
     Hp:
       _value: 10
@@ -40450,6 +40448,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 963138808}
     m_Modifications:
+    - target: {fileID: 661183055954219094, guid: 5082cf39e8f09664aa3c0a3b0333f3fb,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3e7c596d127c79e468d95e2a73c9de3b, type: 2}
     - target: {fileID: 661183055954219100, guid: 5082cf39e8f09664aa3c0a3b0333f3fb,
         type: 3}
       propertyPath: m_RootOrder
@@ -40458,12 +40461,12 @@ PrefabInstance:
     - target: {fileID: 661183055954219100, guid: 5082cf39e8f09664aa3c0a3b0333f3fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 96.41
+      value: -6.11
       objectReference: {fileID: 0}
     - target: {fileID: 661183055954219100, guid: 5082cf39e8f09664aa3c0a3b0333f3fb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -38.88
+      value: -10.59
       objectReference: {fileID: 0}
     - target: {fileID: 661183055954219100, guid: 5082cf39e8f09664aa3c0a3b0333f3fb,
         type: 3}

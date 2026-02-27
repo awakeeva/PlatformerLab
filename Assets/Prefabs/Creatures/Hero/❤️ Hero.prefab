@@ -649,6 +649,7 @@ MonoBehaviour:
   _superThrowParticles: 3
   _superThrowDelay: 0.2
   _hitDrop: {fileID: 1877760547}
+  _throwSpawner: {fileID: 8710448497385236119}
 --- !u!114 &661183055954219099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,7 +818,7 @@ Animator:
   m_GameObject: {fileID: 661183055954219102}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 452cf04eee1b40b47ac07a6a1f0ee2d6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3e7c596d127c79e468d95e2a73c9de3b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1048,7 +1049,7 @@ GameObject:
   - component: {fileID: 2261646059112996023}
   - component: {fileID: 8710448497385236119}
   m_Layer: 12
-  m_Name: ThrowSwordSpawnPosition
+  m_Name: ThrowSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

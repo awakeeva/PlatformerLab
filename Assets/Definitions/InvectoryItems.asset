@@ -16,7 +16,7 @@ MonoBehaviour:
   - _id: SilverCoin
     _icon: {fileID: -2322180950842035098, guid: 800c1f1eb169b0f459604d864b3d1a06,
       type: 3}
-    _tags: 0000000001000000
+    _tags: 00000000
   - _id: GoldCoin
     _icon: {fileID: 6582046967323461550, guid: 800c1f1eb169b0f459604d864b3d1a06, type: 3}
     _tags: 00000000
@@ -29,3 +29,6 @@ MonoBehaviour:
   - _id: HealthPotion
     _icon: {fileID: 3714227102187029162, guid: c8b37fa9e3d5f4c4cbfcf944746797de, type: 3}
     _tags: 
+  - _id: PearlProjectile
+    _icon: {fileID: 21300000, guid: 449ac1c0c6963ef4485f59c478b48eb2, type: 3}
+    _tags: 000000000100000002000000

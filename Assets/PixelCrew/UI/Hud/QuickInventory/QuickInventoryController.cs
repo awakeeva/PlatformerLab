@@ -20,7 +20,7 @@ namespace PixelCrew.UI.Hud.QuickInventory
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
-            _trash.Retain(_session.QuickInvetory.Subscribe(Rebuild));
+            _trash.Retain(_session.QuickInventory.Subscribe(Rebuild));
 
             Rebuild();
         }
@@ -32,7 +32,7 @@ namespace PixelCrew.UI.Hud.QuickInventory
 
         private void Rebuild()
         {
-            var inventory = _session.QuickInvetory.Inventory;
+            var inventory = _session.QuickInventory.Inventory;
 
             // create required items
             for (var i = _createdItem.Count; i < inventory.Length; i++)
