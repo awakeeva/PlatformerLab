@@ -32,6 +32,11 @@ namespace PixelCrew.Model.Data
             onChanged?.Invoke(id, Count(id));
         }
 
+        public InventoryItemData[] GetAll()
+        {
+            return _inventory.ToArray();
+        }
+
         private void AddToStack(string id, int value)
         {
             var isFull = _inventory.Count >= DefsFacade.I.Player.InventorySize;

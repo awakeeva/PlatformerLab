@@ -40144,8 +40144,12 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
+      - Id: SilverCoin
+        Value: 2
       - Id: Sword
         Value: 5
+      - Id: Key
+        Value: 1
     FullHealth: 10
     Hp:
       _value: 10
