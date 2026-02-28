@@ -41,7 +41,10 @@ namespace PixelCrew.Model.Data
             {
                 var itedDef = DefsFacade.I.Items.Get(item.Id);
                 var isAllRequirementsMet = tags.All(x => itedDef.HasTag(x));
-                if (isAllRequirementsMet)
+
+                bool swordExceptionCondition = item.Id == "Sword" ? item.Value > 1 : true;
+
+                if (isAllRequirementsMet && swordExceptionCondition)
                 {
                     retValue.Add(item);
                 }

@@ -68,6 +68,11 @@ namespace PixelCrew.Components.Health
 
             _health += healthDelta;
 
+            if (_health > _fullHealth)
+            {
+                _health = _fullHealth;
+            }
+
             _onChange?.Invoke(_fullHealth, _health);
 
             if (healthDelta < 0)
@@ -84,11 +89,6 @@ namespace PixelCrew.Components.Health
             {
                 _isDead = true;
                 _onDie?.Invoke();
-            }
-
-            if (_health > _fullHealth)
-            {
-                _health = _fullHealth;
             }
         }
 

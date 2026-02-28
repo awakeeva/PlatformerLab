@@ -34,9 +34,13 @@ namespace PixelCrew.Model.Data
 
         private void OnChangedInventory(string id, int value)
         {
+            var indexFoundPrev = Array.FindIndex(Inventory, x => x.Id == id);
+            Inventory = _data.Inventory.GetAll(ItemTag.Usable);
             var indexFound = Array.FindIndex(Inventory, x => x.Id == id);
 
-            if (indexFound != -1)
+            Debug.Log($"indexFound {indexFound} indexFoundPrev {indexFoundPrev}");
+
+            if (indexFound != indexFoundPrev)
             {
                 Inventory = _data.Inventory.GetAll(ItemTag.Usable);
                 SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, Inventory.Length - 1);

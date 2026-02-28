@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0744d5a42c279864cae57b7c79e6d8e4, type: 3}
-  m_Name: PlayerDef
+  m_Script: {fileID: 11500000, guid: faadd70980880974a98bc985a6844955, type: 3}
+  m_Name: HealingItems
   m_EditorClassIdentifier: 
-  _inventorySize: 20
-  _maxHealth: 10
+  _items:
+  - _id: HealthPotion
+    _hp: 5
+  - _id: HealthPotionX2
+    _hp: 10

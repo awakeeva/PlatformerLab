@@ -71,12 +71,27 @@ namespace PixelCrew.Creatures.Hero
         {
             get
             {
+                if (_session.QuickInventory.Inventory.Length < 1)
+                    return false;
+
                 if (SelectedItemID == SwordId)
                     return SwordCount > 1;
 
                 var def = DefsFacade.I.Items.Get(SelectedItemID);
 
                 return def.HasTag(ItemTag.Throwable);
+            }
+        }
+
+        private bool CanHeal
+        {
+            get
+            {
+                if (_session.QuickInventory.Inventory.Length < 1)
+                    return false; 
+
+                var def = DefsFacade.I.Items.Get(SelectedItemID);
+                return def.HasTag(ItemTag.Healing);
             }
         }
 
@@ -301,29 +316,32 @@ namespace PixelCrew.Creatures.Hero
             _session.Data.Inventory.Remove(throwableId, 1);
         }
 
-        //public void Heal()
-        //{
-        //    if (HealthPotionCount > 0)
-        //    {
-        //        _session.Data.Inventory.Remove("HealthPotion", 1);
-        //        HealthComp.ModifyHealth(5);
-        //        AnimatorComp.SetTrigger(HealKey);
-        //    }
-        //}
-
-        public void StartThrowing()
+        public void StartUsing()
         {
-            _superThrowCooldown.Reset();
+            if (CanThrow)
+                _superThrowCooldown.Reset();
         }
 
-        public void PerformThrowing()
+        public void PerformUsing()
         {
-            if (!_throwCooldown.IsReady || !CanThrow) return;
+            if (CanThrow)
+            {
+                if (!_throwCooldown.IsReady) return;
 
-            if (_superThrowCooldown.IsReady) _superThrow = true;
+                if (_superThrowCooldown.IsReady) _superThrow = true;
 
-            AnimatorComp.SetTrigger(ThrowKey);
-            _throwCooldown.Reset();
+                AnimatorComp.SetTrigger(ThrowKey);
+                _throwCooldown.Reset();
+            }
+
+            if (CanHeal)
+            {
+                var healingDef = DefsFacade.I.Healing.Get(SelectedItemID);
+                HealthComp.ModifyHealth(healingDef.Hp);
+                AnimatorComp.SetTrigger(HealKey);
+                _session.Data.Inventory.Remove(SelectedItemID, 1);
+            }
+
         }
 
         public void NextItem()

@@ -28,7 +28,10 @@ MonoBehaviour:
     _tags: 
   - _id: HealthPotion
     _icon: {fileID: 3714227102187029162, guid: c8b37fa9e3d5f4c4cbfcf944746797de, type: 3}
-    _tags: 
+    _tags: 000000000100000003000000
   - _id: PearlProjectile
     _icon: {fileID: 21300000, guid: 449ac1c0c6963ef4485f59c478b48eb2, type: 3}
     _tags: 000000000100000002000000
+  - _id: HealthPotionX2
+    _icon: {fileID: 21300000, guid: 6d207cfbc145b0644992191b82d633c6, type: 3}
+    _tags: 000000000100000003000000

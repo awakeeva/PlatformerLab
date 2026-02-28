@@ -4,7 +4,8 @@
     {
         Stackable,
         Usable,
-        Throwable
+        Throwable,
+        Healing
     }
 }
 

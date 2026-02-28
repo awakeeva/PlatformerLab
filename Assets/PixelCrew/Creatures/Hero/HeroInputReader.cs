@@ -30,16 +30,16 @@ namespace PixelCrew.Creatures.Hero
                 _hero.Dash();
         }
 
-        public void OnThrow(InputAction.CallbackContext context)
+        public void OnUseItem(InputAction.CallbackContext context)
         {
             if (context.started)
             {
-                _hero.StartThrowing();
+                _hero.StartUsing();
             }
 
             if (context.canceled)
             {
-                _hero.PerformThrowing();
+                _hero.PerformUsing();
             }
         }
 
