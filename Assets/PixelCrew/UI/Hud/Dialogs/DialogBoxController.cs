@@ -109,12 +109,6 @@ namespace PixelCrew.UI.Hud.Dialogs
         {
 
         }
-
-        [SerializeField] private DialogData _testData;
-        public void Test()
-        {
-            ShowDialog(_testData);
-        }
     }
 }
 
