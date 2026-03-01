@@ -35,3 +35,6 @@ MonoBehaviour:
   - _id: HealthPotionX2
     _icon: {fileID: 21300000, guid: 6d207cfbc145b0644992191b82d633c6, type: 3}
     _tags: 000000000100000003000000
+  - _id: DiamondGreen
+    _icon: {fileID: 5489425550423852611, guid: acccfb7423b5c994da99b928ff86bd0c, type: 3}
+    _tags: 00000000
