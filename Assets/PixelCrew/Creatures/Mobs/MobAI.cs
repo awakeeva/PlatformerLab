@@ -16,6 +16,8 @@ namespace PixelCrew.Creatures.Mobs
         [SerializeField] private float _attackCooldown = 1f;
         [SerializeField] private float _missHeroCooldown = 0.5f;
 
+        [SerializeField] private float _horizontalTrashold = 0.5f;
+
         private IEnumerator _current;
         private GameObject _target;
 
@@ -86,7 +88,15 @@ namespace PixelCrew.Creatures.Mobs
                 }
                 else
                 {
-                    SetDirectionToTarget();
+                    var distanceX = Mathf.Abs(_target.transform.position.x - transform.position.x);
+                    if (distanceX <= _horizontalTrashold)
+                    {
+                        _creature.SetDirection(Vector2.zero);
+                    }
+                    else
+                    {
+                        SetDirectionToTarget();
+                    }
                 }
 
                 yield return null;
