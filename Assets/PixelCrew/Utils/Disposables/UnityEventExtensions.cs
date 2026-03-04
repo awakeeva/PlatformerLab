@@ -22,6 +22,14 @@ namespace PixelCrew.Utils.Disposables
                 new ActionDisposable(() => unityEvent.RemoveListener(call));
         }
 
+        public static IDisposable Subscribe<TType, TType2>(this UnityEvent<TType, TType2> unityEvent, UnityAction<TType, TType2> call)
+        {
+            unityEvent.AddListener(call);
+
+            return
+                new ActionDisposable(() => unityEvent.RemoveListener(call));
+        }
+
 
     }
 }
