@@ -23,4 +23,16 @@ MonoBehaviour:
   - Key: button_exit
     Value: "\u30A8\u30B0\u30B8\u30C3\u30C8\r"
   - Key: selected_language
-    Value: "\u9078\u629E\u3055\u308C\u305F\u8A00\u8A9E\u306F {0}"
+    Value: "\u9078\u629E\u3055\u308C\u305F\u8A00\u8A9E\u306F {0}\r"
+  - Key: button_locales
+    Value: "\u30E9\u30F3\u30B2\u30FC\u30B8\r"
+  - Key: language_title
+    Value: "\u8A00\u8A9E\r"
+  - Key: button_ok
+    Value: "\u30AA\u30FC\u30B1\u30FC\r"
+  - Key: options_title
+    Value: "\u30AA\u30D7\u30B7\u30E7\u30F3\r"
+  - Key: option_music
+    Value: "\u97F3\u697D\r"
+  - Key: option_sfx
+    Value: "\u7279\u6B8A\u52B9\u679C"

@@ -23,4 +23,16 @@ MonoBehaviour:
   - Key: button_exit
     Value: "exit\r"
   - Key: selected_language
-    Value: Selected language is {0}
+    Value: "Selected language is {0}\r"
+  - Key: button_locales
+    Value: "language\r"
+  - Key: language_title
+    Value: "Language\r"
+  - Key: button_ok
+    Value: "OK\r"
+  - Key: options_title
+    Value: "Options\r"
+  - Key: option_music
+    Value: "Music\r"
+  - Key: option_sfx
+    Value: Sfx

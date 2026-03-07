@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 5776944819751970822}
   - component: {fileID: 2304788388922644775}
   - component: {fileID: 1886200527709238137}
+  - component: {fileID: 1791655242}
   m_Layer: 5
   m_Name: PressedText
   m_TagString: Untagged
@@ -300,6 +301,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: OK
+--- !u!114 &1791655242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390027416915157068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39b9cdf9d71c7e44886df32941550f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_ok
+  _capitalize: 1
 --- !u!1 &6900030951729560318
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +326,7 @@ GameObject:
   - component: {fileID: 8417226459285113033}
   - component: {fileID: 1912131285443024224}
   - component: {fileID: 8866528456928575503}
+  - component: {fileID: 1791655243}
   m_Layer: 5
   m_Name: NormalText
   m_TagString: Untagged
@@ -378,6 +394,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: OK
+--- !u!114 &1791655243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900030951729560318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39b9cdf9d71c7e44886df32941550f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_ok
+  _capitalize: 1
 --- !u!1 &7872538063217466202
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39b9cdf9d71c7e44886df32941550f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: menu_title
+  _key: language_title
   _capitalize: 0
 --- !u!1 &8842954647389035007
 GameObject:
@@ -759,7 +789,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6e089ee3dc728804fb056ec41d9a7d4d, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
