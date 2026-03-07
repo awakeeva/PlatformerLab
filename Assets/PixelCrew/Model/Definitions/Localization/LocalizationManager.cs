@@ -15,6 +15,9 @@ namespace PixelCrew.Model.Definitions.Localization
 
         public event Action OnLocaleChanged;
 
+        public string LocaleKey => _localeKey.Value;
+
+
         static LocalizationManager()
         {
             I = new LocalizationManager();
@@ -24,11 +27,13 @@ namespace PixelCrew.Model.Definitions.Localization
         {
             LoadLocale(_localeKey.Value);
         }
+        
 
         private void LoadLocale(string localeToLoad)
         {
             var def = Resources.Load<LocaleDef>($"Locales/{localeToLoad}");
             _localization = def.GetData();
+            _localeKey.Value = localeToLoad;
             OnLocaleChanged?.Invoke();
         }
 
@@ -36,6 +41,11 @@ namespace PixelCrew.Model.Definitions.Localization
         {
             return
                 _localization.TryGetValue(key, out var value) ? value : $"%%%{key}%%%";
+        }
+
+        public void SetLocale(string selectedKey)
+        {
+            LoadLocale(selectedKey);
         }
     }
 }

@@ -14,6 +14,11 @@ namespace PixelCrew.UI.MainMenu
             WindowUtils.CreateWindow("UI/SettingsWindow");
         }
 
+        public void OnLanguages()
+        {
+            WindowUtils.CreateWindow("UI/LocalizationWindow");
+        }
+
         public void OnStartGame()
         {
             _closeAction = () => { SceneManager.LoadScene("Level1"); };
