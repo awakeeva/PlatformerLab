@@ -175,7 +175,7 @@ MonoBehaviour:
   _required:
   - Id: DiamondGreen
     Value: 1
-  _removeAftreUse: 0
+  _removeAftreUse: 1
   _onSuccess:
     m_PersistentCalls:
       m_Calls:
@@ -233,6 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mode: 1
   _bound:
+    _localizeKey: 
     _sentences: []
   _external: {fileID: 11400000, guid: 16dbdcf5a290d5e4592159244145e358, type: 2}
 --- !u!114 &4669831935230880168

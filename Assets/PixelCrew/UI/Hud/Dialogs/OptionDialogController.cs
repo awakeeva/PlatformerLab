@@ -1,7 +1,9 @@
-﻿using PixelCrew.UI.Widgets;
+﻿using PixelCrew.Model.Definitions.Localization;
+using PixelCrew.UI.Widgets;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace PixelCrew.UI.Hud.Dialogs
@@ -40,6 +42,7 @@ namespace PixelCrew.UI.Hud.Dialogs
     public class OptionDialogData
     {
         public string DialogText;
+        public string LocalizeKey;
         public OptionData[] Options;
     }
 
@@ -47,6 +50,7 @@ namespace PixelCrew.UI.Hud.Dialogs
     public class OptionData
     {
         public string Text;
+        public string LocalizeKey;
         public UnityEvent OnSelect;
     }
 }

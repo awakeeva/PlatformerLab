@@ -855,6 +855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mode: 0
   _bound:
+    _localizeKey: dialog_door_needs_key
     _sentences:
     - You need a key...
     - Try to search...
@@ -1362,7 +1363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271759421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.74999976, y: -11.74, z: -10}
+  m_LocalPosition: {x: -10.540001, y: -12.78, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1470453730}
@@ -2143,7 +2144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.74999976, y: -11.74, z: -10}
+  m_LocalPosition: {x: -10.540001, y: -12.78, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1419676465}
@@ -30139,12 +30140,12 @@ PrefabInstance:
     - target: {fileID: 661183055954219100, guid: 5082cf39e8f09664aa3c0a3b0333f3fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.75
+      value: -10.54
       objectReference: {fileID: 0}
     - target: {fileID: 661183055954219100, guid: 5082cf39e8f09664aa3c0a3b0333f3fb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.44
+      value: -13.48
       objectReference: {fileID: 0}
     - target: {fileID: 661183055954219100, guid: 5082cf39e8f09664aa3c0a3b0333f3fb,
         type: 3}

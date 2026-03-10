@@ -1052,6 +1052,7 @@ GameObject:
   - component: {fileID: 912893030}
   - component: {fileID: 912893029}
   - component: {fileID: 912893031}
+  - component: {fileID: 912893032}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -1075,8 +1076,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -23, y: 10}
-  m_SizeDelta: {x: 40, y: 10}
+  m_AnchoredPosition: {x: -37.55, y: 10}
+  m_SizeDelta: {x: 69.10737, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &912893029
 MonoBehaviour:
@@ -1104,7 +1105,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 8
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1173,6 +1174,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &912893032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912893027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39b9cdf9d71c7e44886df32941550f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_continue
+  _capitalize: 0
 --- !u!1 &929104752
 GameObject:
   m_ObjectHideFlags: 0

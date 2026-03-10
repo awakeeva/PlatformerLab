@@ -35,4 +35,22 @@ MonoBehaviour:
   - Key: option_music
     Value: "Music\r"
   - Key: option_sfx
-    Value: Sfx
+    Value: "Sfx\r"
+  - Key: pause_title
+    Value: "Pause\r"
+  - Key: button_restart
+    Value: "Restart\r"
+  - Key: dialog_crabby_getgem
+    Value: "Get me a Green Diamond. ## And I will show you The Miracle!\r"
+  - Key: dialog_crabby_gemobtained
+    Value: "And now The Miracle! ## I have a Gem. And you don't! ## Ahahahaha!!!\r"
+  - Key: button_continue
+    Value: "Continue\r"
+  - Key: dialog_door_needs_key
+    Value: "You need a key... ## Try to search...\r"
+  - Key: question_use_helm
+    Value: "Use helm?\r"
+  - Key: option_yes
+    Value: "1. Yes\r"
+  - Key: option_no
+    Value: 2. No

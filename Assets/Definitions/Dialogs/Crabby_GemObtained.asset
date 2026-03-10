@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Crabby_GemObtained
   m_EditorClassIdentifier: 
   _data:
+    _localizeKey: dialog_crabby_gemobtained
     _sentences:
     - And now The Miracle!
     - I have a Gem. And you don't!
