@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace PixelCrew.Model.Definitions
 {
-    [CreateAssetMenu(menuName = "Defs/InvectoryItems", fileName = "InvectoryItems")]
-    public class InventoryItemsDef : DefRepository<ItemDef>
+    [CreateAssetMenu(menuName = "Defs/Items", fileName = "Items")]
+    public class ItemsRepository : DefRepository<ItemDef>
     {
 
     }
