@@ -15,6 +15,11 @@ namespace PixelCrew.Model.Definitions
 
             return default;
         }
+
+#if UNITY_EDITOR
+        public TDefType[] ItemsForEditor => _collection;
+#endif
+
     }
 
     public interface IHaveId

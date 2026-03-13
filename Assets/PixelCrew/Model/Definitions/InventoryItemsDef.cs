@@ -7,26 +7,13 @@ using UnityEngine;
 namespace PixelCrew.Model.Definitions
 {
     [CreateAssetMenu(menuName = "Defs/InvectoryItems", fileName = "InvectoryItems")]
-    public class InventoryItemsDef : ScriptableObject
+    public class InventoryItemsDef : DefRepository<ItemDef>
     {
-        [SerializeField] private ItemDef[] _items;
-#if UNITY_EDITOR
-        public ItemDef[] ItemsForEditor => _items;
-#endif
-        public ItemDef Get(string id)
-        {
-            foreach (var itemDef in _items)
-            {
-                if (itemDef.Id == id)
-                    return itemDef;
-            }
 
-            return default;
-        }
     }
 
     [Serializable]
-    public struct ItemDef
+    public struct ItemDef : IHaveId
     {
         [SerializeField] private string _id;
         [SerializeField] private Sprite _icon;
