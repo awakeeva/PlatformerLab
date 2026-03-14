@@ -11,13 +11,13 @@ namespace PixelCrew.Model.Definitions
     {
         [SerializeField] private ItemsRepository _items;
         [SerializeField] private ThrowableRepository _throwable;
-        [SerializeField] private HealingItemsDef _healing;
+        [SerializeField] private PotionRepository _healing;
         [SerializeField] private PlayerDef _player;
 
         public ItemsRepository Items => _items;
         public ThrowableRepository Throwable => _throwable;
         public PlayerDef Player => _player;
-        public HealingItemsDef Healing => _healing;
+        public PotionRepository Healing => _healing;
 
         private static DefsFacade _instance;
         public static DefsFacade I => _instance == null ? LoadDefs() : _instance;

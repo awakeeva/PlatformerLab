@@ -5,7 +5,7 @@ namespace PixelCrew.Model.Definitions
 {
     [CreateAssetMenu(menuName = "Defs/HealingItems", fileName = "HealingItems")]
 
-    public class HealingItemsDef : DefRepository<HealingDef>
+    public class PotionRepository : DefRepository<HealingDef>
     {
 
     }
