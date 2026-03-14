@@ -6,7 +6,7 @@ namespace PixelCrew.Model.Definitions
 {
     [CreateAssetMenu(menuName = "Defs/ThrowableItems", fileName = "ThrowableItems")]
 
-    public class ThrowableItemsDef : DefRepository<ThrowableDef>
+    public class ThrowableRepository : DefRepository<ThrowableDef>
     {
 
     }
