@@ -91,7 +91,7 @@ namespace PixelCrew.Creatures.Hero
                     return false; 
 
                 var def = DefsFacade.I.Items.Get(SelectedItemID);
-                return def.HasTag(ItemTag.Healing);
+                return def.HasTag(ItemTag.Potion);
             }
         }
 

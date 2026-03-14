@@ -5,7 +5,7 @@
         Stackable,
         Usable,
         Throwable,
-        Healing
+        Potion
     }
 }
 
