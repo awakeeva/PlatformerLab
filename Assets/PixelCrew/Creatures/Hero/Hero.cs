@@ -346,9 +346,34 @@ namespace PixelCrew.Creatures.Hero
         private void UsePotion()
         {
             var potion = DefsFacade.I.Potions.Get(SelectedItemID);
-            HealthComp.ModifyHealth((int)potion.Value);
+
+            switch (potion.Effect)
+            {
+                case Effect.AddHp:
+                    HealthComp.ModifyHealth((int)potion.Value);
+                    break;
+                case Effect.SpeedUp:
+                    _speedUpCooldown.Value = potion.Time + _speedUpCooldown.TimeLasts;
+                    _additionalSpeed = Mathf.Max(potion.Value, _additionalSpeed);
+                    _speedUpCooldown.Reset();
+                    break;
+            }
+            
             AnimatorComp.SetTrigger(HealKey);
             _session.Data.Inventory.Remove(SelectedItemID, 1);
+        }
+
+        private Cooldown _speedUpCooldown = new Cooldown();
+        private float _additionalSpeed;
+
+        protected override float CalculateSpeed()
+        {
+            if (_speedUpCooldown.IsReady)
+            {
+                _additionalSpeed = 0f;
+            }
+
+            return base.CalculateSpeed() + _additionalSpeed;
         }
 
         public void NextItem()

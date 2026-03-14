@@ -14,10 +14,12 @@ namespace PixelCrew.Model.Definitions
     public struct PotionDef : IHaveId
     {
         [InventoryId][SerializeField] private string _id;
+        [SerializeField] private Effect _effect;
         [SerializeField] private float _value;
         [SerializeField] private float _time;
 
         public string Id => _id;
+        public Effect Effect => _effect;
 
         public bool IsVoid => string.IsNullOrEmpty(_id);
 
@@ -26,5 +28,12 @@ namespace PixelCrew.Model.Definitions
         public float Time => _time;
 
     }
+
+    public enum Effect
+    {
+        AddHp,
+        SpeedUp
+    }
+
 }
 

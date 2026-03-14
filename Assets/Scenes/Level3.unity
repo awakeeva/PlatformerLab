@@ -279,8 +279,8 @@ MonoBehaviour:
       _inventory:
       - Id: Sword
         Value: 15
-      - Id: SilverCoin
-        Value: 50
+      - Id: SpeedUpPotion
+        Value: 20
     FullHealth: 10
     Hp:
       _value: 10

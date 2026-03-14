@@ -40923,7 +40923,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _inventory:
-      _inventory: []
+      _inventory:
+      - Id: SpeedUpPotion
+        Value: 20
     FullHealth: 30
     Hp:
       _value: 3
