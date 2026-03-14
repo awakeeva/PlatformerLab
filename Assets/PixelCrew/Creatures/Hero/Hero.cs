@@ -77,9 +77,11 @@ namespace PixelCrew.Creatures.Hero
                 if (SelectedItemID == SwordId)
                     return SwordCount > 1;
 
-                var def = DefsFacade.I.Items.Get(SelectedItemID);
+                //var def = DefsFacade.I.Items.Get(SelectedItemID);
 
-                return def.HasTag(ItemTag.Throwable);
+                //return def.HasTag(ItemTag.Throwable);
+
+                return _session.QuickInventory.SelectedDef.HasTag(ItemTag.Throwable);
             }
         }
 
@@ -336,12 +338,17 @@ namespace PixelCrew.Creatures.Hero
 
             if (CanHeal)
             {
-                var healingDef = DefsFacade.I.Healing.Get(SelectedItemID);
-                HealthComp.ModifyHealth(healingDef.Hp);
-                AnimatorComp.SetTrigger(HealKey);
-                _session.Data.Inventory.Remove(SelectedItemID, 1);
+                UsePotion();
             }
 
+        }
+
+        private void UsePotion()
+        {
+            var potion = DefsFacade.I.Potions.Get(SelectedItemID);
+            HealthComp.ModifyHealth((int)potion.Value);
+            AnimatorComp.SetTrigger(HealKey);
+            _session.Data.Inventory.Remove(SelectedItemID, 1);
         }
 
         public void NextItem()

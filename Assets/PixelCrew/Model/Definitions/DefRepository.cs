@@ -7,6 +7,9 @@ namespace PixelCrew.Model.Definitions
         [SerializeField] protected TDefType[] _collection;
         public TDefType Get(string id)
         {
+            if (string.IsNullOrEmpty(id))
+                return default;
+            
             foreach (var itemDef in _collection)
             {
                 if (itemDef.Id == id)

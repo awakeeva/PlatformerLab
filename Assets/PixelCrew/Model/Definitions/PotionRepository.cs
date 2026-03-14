@@ -3,24 +3,27 @@ using UnityEngine;
 
 namespace PixelCrew.Model.Definitions
 {
-    [CreateAssetMenu(menuName = "Defs/HealingItems", fileName = "HealingItems")]
+    [CreateAssetMenu(menuName = "Defs/Potions", fileName = "Potions")]
 
-    public class PotionRepository : DefRepository<HealingDef>
+    public class PotionRepository : DefRepository<PotionDef>
     {
 
     }
 
     [Serializable]
-    public struct HealingDef : IHaveId
+    public struct PotionDef : IHaveId
     {
         [InventoryId][SerializeField] private string _id;
-        [SerializeField] private int _hp;
+        [SerializeField] private float _value;
+        [SerializeField] private float _time;
 
         public string Id => _id;
 
         public bool IsVoid => string.IsNullOrEmpty(_id);
 
-        public int Hp => _hp;
+        public float Value => _value;
+
+        public float Time => _time;
 
     }
 }
