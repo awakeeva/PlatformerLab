@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9119524eb7dfe794f8dd40b645074ca1, type: 3}
-  m_Name: InvectoryItems
+  m_Name: Items
   m_EditorClassIdentifier: 
   _collection:
   - _id: SilverCoin
