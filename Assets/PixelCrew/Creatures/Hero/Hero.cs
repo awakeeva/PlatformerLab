@@ -217,7 +217,7 @@ namespace PixelCrew.Creatures.Hero
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!IsGrounded && _allowDoubleJump && !_isOnWall)
+            if (!IsGrounded && _allowDoubleJump && _session.PerksModel.IsDoubleJumpSupported && !_isOnWall)
             {
                 _allowDoubleJump = false;
                 DoJumpVfx();
@@ -280,7 +280,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnDoThrow()
         {
-            if (_superThrow)
+            if (_superThrow && _session.PerksModel.IsSuperThrowSupported)
             {
                 var throwableCount = _session.Data.Inventory.Count(SelectedItemID);
                 var possibleCount = SelectedItemID == SwordId ? throwableCount - 1 : throwableCount;

@@ -31,6 +31,8 @@ namespace PixelCrew.Model.Data
         }
 
         public string Used => _data.Perks.Used.Value;
+        public bool IsSuperThrowSupported => _data.Perks.Used.Value == "super-throw";
+        public bool IsDoubleJumpSupported => _data.Perks.Used.Value == "double-jump";
 
         public void Unlock(string id)
         {
