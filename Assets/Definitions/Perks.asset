@@ -19,9 +19,13 @@ MonoBehaviour:
     _price:
       _itemId: DiamondGreen
       _count: 2
+    _cooldown:
+      _value: 5
   - _id: super-throw
     _icon: {fileID: 21300000, guid: 4c645f238fed85345b0dc21e7bcfab7a, type: 3}
     _info: This is Super Throw!
     _price:
       _itemId: DiamondGreen
       _count: 10
+    _cooldown:
+      _value: 5
