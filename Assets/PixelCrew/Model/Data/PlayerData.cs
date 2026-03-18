@@ -13,6 +13,8 @@ namespace PixelCrew.Model.Data
         public int FullHealth;
         public IntProperty Hp = new IntProperty();
 
+        public PerksData Perks = new PerksData();
+
         public PlayerData Clone()
         {
             var json = JsonUtility.ToJson(this);

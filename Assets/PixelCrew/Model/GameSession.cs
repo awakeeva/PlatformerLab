@@ -1,11 +1,10 @@
-﻿using UnityEngine;
-using PixelCrew.Model.Data;
-using UnityEngine.SceneManagement;
-using PixelCrew.Utils.Disposables;
-using System.Collections.Generic;
-using System;
-using PixelCrew.Components.LevelManagment;
+﻿using System.Collections.Generic;
 using System.Linq;
+using PixelCrew.Components.LevelManagment;
+using PixelCrew.Model.Data;
+using PixelCrew.Utils.Disposables;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Model
 {
@@ -19,6 +18,7 @@ namespace PixelCrew.Model
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         public QuickInventoryModel QuickInventory { get; private set; }
+        public PerksModel PerksModel { get; private set; }
 
         private List<string> _checkpoints = new List<string>();
 
@@ -46,16 +46,16 @@ namespace PixelCrew.Model
             }
             else
             {
-                DontDestroyOnLoad(this);
                 Save();
                 InitModels();
+                DontDestroyOnLoad(this);
                 StartSession(_defaultCheckPoint);
             }
         }
 
-        private void StartSession(string _defaultCheckPoint)
+        private void StartSession(string defaultCheckPoint)
         {
-            SetChecked(_defaultCheckPoint);
+            SetChecked(defaultCheckPoint);
             LoadHud();
             SpawnHero();
         }
@@ -78,6 +78,9 @@ namespace PixelCrew.Model
         {
             QuickInventory = new QuickInventoryModel(_data);
             _trash.Retain(QuickInventory);
+
+            PerksModel = new PerksModel(_data);
+            _trash.Retain(PerksModel);
         }
 
         private void LoadHud()
@@ -118,7 +121,6 @@ namespace PixelCrew.Model
         {
             _trash.Dispose();
         }
-        
     }
 }
 

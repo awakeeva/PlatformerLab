@@ -279,11 +279,15 @@ MonoBehaviour:
       _inventory:
       - Id: Sword
         Value: 15
-      - Id: SpeedUpPotion
+      - Id: DiamondGreen
         Value: 20
     FullHealth: 10
     Hp:
       _value: 10
+    Perks:
+      _used:
+        _value: 
+      _unlocked: []
   _defaultCheckPoint: level3-checkpoint0
 --- !u!1 &267801708
 GameObject:

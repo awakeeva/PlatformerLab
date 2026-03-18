@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 namespace PixelCrew.Model.Definitions
 {
@@ -23,6 +24,7 @@ namespace PixelCrew.Model.Definitions
         public TDefType[] ItemsForEditor => _collection;
 #endif
 
+        public TDefType[] All => new List<TDefType>(_collection).ToArray();
     }
 
     public interface IHaveId
