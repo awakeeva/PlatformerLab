@@ -12,6 +12,7 @@ namespace PixelCrew.UI.Hud
     {
         [SerializeField] private ProgressBarWidget _healthBar;
         [SerializeField] private PerkBar _perkBar;
+        [SerializeField] private ProgressBarWidget _perkCooldownProgressBar;
 
         private GameSession _session;
 
@@ -24,6 +25,8 @@ namespace PixelCrew.UI.Hud
 
             _session.PerksModel.OnChanged += OnPerkChanged;
             OnPerkChanged();
+
+            _session.PerksModel.OnCooldownReset += _perkCooldownProgressBar.OnResetCooldown;
         }
 
         private void OnPerkChanged()
@@ -56,6 +59,7 @@ namespace PixelCrew.UI.Hud
         {
             _session.Data.Hp.OnChanged -= OnHealthChanged;
             _session.PerksModel.OnChanged -= OnPerkChanged;
+            _session.PerksModel.OnCooldownReset -= _perkCooldownProgressBar.OnResetCooldown;
         }
     }
 }

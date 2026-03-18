@@ -51,7 +51,8 @@ namespace PixelCrew.UI.Windows.Perks
             var def = DefsFacade.I.Perks.Get(selected);
             _price.SetData(def.Price);
 
-            _info.text = LocalizationManager.I.Localize(def.Info);
+            //_info.text = LocalizationManager.I.Localize(def.Info);
+            _info.text = def.Info;
         }
 
         private void OnUse()

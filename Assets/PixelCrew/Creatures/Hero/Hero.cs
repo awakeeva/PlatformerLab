@@ -219,7 +219,7 @@ namespace PixelCrew.Creatures.Hero
         {
             if (!IsGrounded && _allowDoubleJump && _session.PerksModel.IsDoubleJumpSupported && !_isOnWall)
             {
-                _session.PerksModel.DoubleJump.Cooldown.Reset();
+                _session.PerksModel.DoubleJumpReset();
                 _allowDoubleJump = false;
                 DoJumpVfx();
 
@@ -283,7 +283,7 @@ namespace PixelCrew.Creatures.Hero
         {
             if (_superThrow && _session.PerksModel.IsSuperThrowSupported)
             {
-                _session.PerksModel.SuperThrow.Cooldown.Reset();
+                _session.PerksModel.SuperThrowReset();
 
                 var throwableCount = _session.Data.Inventory.Count(SelectedItemID);
                 var possibleCount = SelectedItemID == SwordId ? throwableCount - 1 : throwableCount;

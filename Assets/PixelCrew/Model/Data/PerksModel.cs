@@ -1,7 +1,9 @@
 ﻿using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
+using PixelCrew.Utils;
 using PixelCrew.Utils.Disposables;
 using System;
+using UnityEngine;
 
 namespace PixelCrew.Model.Data
 {
@@ -13,6 +15,10 @@ namespace PixelCrew.Model.Data
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         public event Action OnChanged;
+
+        public delegate void OnPerkCooldownReset(Cooldown cooldown);
+        public OnPerkCooldownReset OnCooldownReset;
+
         public PerksModel(PlayerData data)
         {
             _data = data;
@@ -31,13 +37,26 @@ namespace PixelCrew.Model.Data
         }
 
         public string Used => _data.Perks.Used.Value;
-        public PerkDef SuperThrow => DefsFacade.I.Perks.Get("super-throw");
-        public bool IsSuperThrowSupported =>
-            _data.Perks.Used.Value == "super-throw" && SuperThrow.Cooldown.IsReady;
-        public PerkDef DoubleJump => DefsFacade.I.Perks.Get("double-jump");
-        public bool IsDoubleJumpSupported =>
-            _data.Perks.Used.Value == "double-jump" && DoubleJump.Cooldown.IsReady;
 
+        private Cooldown _superThrowCooldown
+            = new Cooldown() { Value = DefsFacade.I.Perks.Get("super-throw").Cooldown.Value };
+        public void SuperThrowReset()
+        {
+            _superThrowCooldown.Reset();
+            OnCooldownReset?.Invoke(_superThrowCooldown);
+        }
+        public bool IsSuperThrowSupported =>
+            _data.Perks.Used.Value == "super-throw" && _superThrowCooldown.IsReady;
+
+        private Cooldown _doubleJumpCooldown
+            = new Cooldown() { Value = DefsFacade.I.Perks.Get("double-jump").Cooldown.Value };
+        public void DoubleJumpReset()
+        {
+            _doubleJumpCooldown.Reset();
+            OnCooldownReset?.Invoke(_doubleJumpCooldown);
+        }
+        public bool IsDoubleJumpSupported =>
+            _data.Perks.Used.Value == "double-jump" && _doubleJumpCooldown.IsReady;
 
         public void Unlock(string id)
         {
