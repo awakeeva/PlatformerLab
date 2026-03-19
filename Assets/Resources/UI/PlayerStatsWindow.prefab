@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 7714982582233244477}
   - component: {fileID: 7714982582233244476}
   m_Layer: 5
-  m_Name: HeroLevelsWindow
+  m_Name: PlayerStatsWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -2523,10 +2523,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7714982582085688627, guid: d36a87cbd33e2e04a9c9254bcecf5272,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714982582085688627, guid: d36a87cbd33e2e04a9c9254bcecf5272,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714982582085688627, guid: d36a87cbd33e2e04a9c9254bcecf5272,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714982582085688627, guid: d36a87cbd33e2e04a9c9254bcecf5272,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7714982582233244466, guid: d36a87cbd33e2e04a9c9254bcecf5272,
         type: 3}
       propertyPath: m_Name
-      value: HeroLevelsWindow
+      value: PlayerStatsWindow
       objectReference: {fileID: 0}
     - target: {fileID: 7714982582233244477, guid: d36a87cbd33e2e04a9c9254bcecf5272,
         type: 3}
@@ -2631,6 +2651,26 @@ PrefabInstance:
     - target: {fileID: 7714982582233244477, guid: d36a87cbd33e2e04a9c9254bcecf5272,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599380905188054127, guid: d36a87cbd33e2e04a9c9254bcecf5272,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599380905188054127, guid: d36a87cbd33e2e04a9c9254bcecf5272,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599380905188054127, guid: d36a87cbd33e2e04a9c9254bcecf5272,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599380905188054127, guid: d36a87cbd33e2e04a9c9254bcecf5272,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
