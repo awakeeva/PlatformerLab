@@ -14,3 +14,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySize: 20
   _maxHealth: 10
+  _stats:
+  - _name: Healths
+    _id: 0
+    _icon: {fileID: 21300000, guid: 7cae9765c1cdec64880f6b9094d069dc, type: 3}
+    _levels:
+    - _value: 5
+      _price:
+        _itemId: SilverCoin
+        _count: 0
+    - _value: 10
+      _price:
+        _itemId: SilverCoin
+        _count: 10
+    - _value: 20
+      _price:
+        _itemId: SilverCoin
+        _count: 50
+    - _value: 40
+      _price:
+        _itemId: SilverCoin
+        _count: 100
+  - _name: Speed
+    _id: 1
+    _icon: {fileID: 21300000, guid: 34b47193ba3cf3e49a441dad62774f16, type: 3}
+    _levels:
+    - _value: 4
+      _price:
+        _itemId: SilverCoin
+        _count: 0
+    - _value: 5
+      _price:
+        _itemId: SilverCoin
+        _count: 10
+    - _value: 6
+      _price:
+        _itemId: SilverCoin
+        _count: 50
+  - _name: Range Damage
+    _id: 2
+    _icon: {fileID: 21300000, guid: 2aebaf5b6beb27a4b811c9802de3574e, type: 3}
+    _levels:
+    - _value: 1
+      _price:
+        _itemId: 
+        _count: 0
+    - _value: 2
+      _price:
+        _itemId: SilverCoin
+        _count: 5
+    - _value: 2
+      _price:
+        _itemId: SilverCoin
+        _count: 10
+    - _value: 3
+      _price:
+        _itemId: SilverCoin
+        _count: 50
+    - _value: 4
+      _price:
+        _itemId: SilverCoin
+        _count: 100

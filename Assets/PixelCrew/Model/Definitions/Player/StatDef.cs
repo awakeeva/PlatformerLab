@@ -6,8 +6,8 @@ namespace PixelCrew.Model.Definitions
     [Serializable]
     public struct StatDef
     {
-        [SerializeField] private StatId _id;
         [SerializeField] private string _name;
+        [SerializeField] private StatId _id;
         [SerializeField] private Sprite _icon;
         [SerializeField] private StatLevel[] _levels;
 
