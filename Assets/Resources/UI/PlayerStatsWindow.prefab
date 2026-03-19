@@ -525,6 +525,7 @@ GameObject:
   - component: {fileID: 42174190398574812}
   - component: {fileID: 42174190398574814}
   - component: {fileID: 42174190398574813}
+  - component: {fileID: 895253720}
   m_Layer: 5
   m_Name: Progress
   m_TagString: Untagged
@@ -589,6 +590,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &895253720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42174190398574803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd34d9455696aa4aaafdda57886688e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bar: {fileID: 42174189275005552}
 --- !u!1 &2077260745886353482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,6 +1046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2077260746278116014}
   - component: {fileID: 2077260746278116015}
+  - component: {fileID: 2037382501877216934}
   m_Layer: 5
   m_Name: PlayerStatsWindow
   m_TagString: Untagged
@@ -1046,7 +1061,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077260746278116001}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1080,6 +1095,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2037382501877216934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077260746278116001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2debad2c1572a4192e81b130988bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _statsContainer: {fileID: 42174189780080077}
+  _prefab: {fileID: 2037382502752012456}
+  _buyButton: {fileID: 2077260746254003551}
+  _price: {fileID: 4167608929552858145}
 --- !u!1 &2077260746304571917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,6 +1274,7 @@ GameObject:
   - component: {fileID: 2077260746619135136}
   - component: {fileID: 2077260746619135150}
   - component: {fileID: 2077260746619135137}
+  - component: {fileID: 2037382502752012456}
   m_Layer: 5
   m_Name: StatsItem
   m_TagString: Untagged
@@ -1312,6 +1344,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2037382502752012456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077260746619135139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3754127f48f61f4586228bbc67ce862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 42174189286348878}
+  _name: {fileID: 2077260746044831377}
+  _currentValue: {fileID: 42174188840280710}
+  _increaseValue: {fileID: 42174188865830876}
+  _progress: {fileID: 0}
+  _selector: {fileID: 42174190099545694}
 --- !u!1 &2077260746669943760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,7 +1765,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2037382501877216934}
         m_MethodName: Close
         m_Mode: 1
         m_Arguments:
