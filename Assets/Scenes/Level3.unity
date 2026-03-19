@@ -130,7 +130,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 74517625}
-  - component: {fileID: 74517626}
   m_Layer: 0
   m_Name: container
   m_TagString: Untagged
@@ -153,20 +152,6 @@ Transform:
   m_Father: {fileID: 899236301}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &74517626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74517624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400624462f104db4cb3e1d7a39529f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _effectValue: 0.3
-  _followTarget: {fileID: 519420032}
 --- !u!1 &147611459
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 580067619}
   - component: {fileID: 580067620}
+  - component: {fileID: 580067621}
   m_Layer: 0
   m_Name: "\u0421loudsFront"
   m_TagString: Untagged
@@ -973,6 +959,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
   _container: {fileID: 893443667}
+--- !u!114 &580067621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580067618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400624462f104db4cb3e1d7a39529f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectValue: 0.3
+  _followTarget: {fileID: 519420032}
 --- !u!1 &614901681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,8 +1144,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 759000911}
-  - component: {fileID: 759000912}
-  - component: {fileID: 759000913}
   m_Layer: 0
   m_Name: container
   m_TagString: Untagged
@@ -1170,34 +1168,6 @@ Transform:
   m_Father: {fileID: 1424826570}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &759000912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759000910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400624462f104db4cb3e1d7a39529f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _effectValue: 0.1
-  _followTarget: {fileID: 519420032}
---- !u!114 &759000913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759000910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400624462f104db4cb3e1d7a39529f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _effectValue: 0.1
-  _followTarget: {fileID: 519420032}
 --- !u!1 &869924812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1335,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 887970692}
-  - component: {fileID: 887970693}
   m_Layer: 0
   m_Name: container
   m_TagString: Untagged
@@ -1390,20 +1359,6 @@ Transform:
   m_Father: {fileID: 1733877340}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &887970693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887970691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400624462f104db4cb3e1d7a39529f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _effectValue: 0.2
-  _followTarget: {fileID: 519420032}
 --- !u!1 &893443666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,7 +1368,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 893443667}
-  - component: {fileID: 893443668}
   m_Layer: 0
   m_Name: container
   m_TagString: Untagged
@@ -1437,20 +1391,6 @@ Transform:
   m_Father: {fileID: 580067619}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &893443668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893443666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400624462f104db4cb3e1d7a39529f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _effectValue: 0.3
-  _followTarget: {fileID: 519420032}
 --- !u!1 &899236300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 899236301}
   - component: {fileID: 899236302}
+  - component: {fileID: 899236303}
   m_Layer: 0
   m_Name: "\u0421louds1"
   m_TagString: Untagged
@@ -1497,6 +1438,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
   _container: {fileID: 74517625}
+--- !u!114 &899236303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899236300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400624462f104db4cb3e1d7a39529f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectValue: 0.3
+  _followTarget: {fileID: 519420032}
 --- !u!1 &939801985
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,6 +3395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1424826570}
   - component: {fileID: 1424826571}
+  - component: {fileID: 1424826572}
   m_Layer: 0
   m_Name: Clouds3
   m_TagString: Untagged
@@ -3476,6 +3432,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
   _container: {fileID: 759000911}
+--- !u!114 &1424826572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424826569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400624462f104db4cb3e1d7a39529f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectValue: 0.1
+  _followTarget: {fileID: 519420032}
 --- !u!1 &1458894172
 GameObject:
   m_ObjectHideFlags: 0
@@ -4362,6 +4332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1733877340}
   - component: {fileID: 1733877341}
+  - component: {fileID: 1733877342}
   m_Layer: 0
   m_Name: Clouds2
   m_TagString: Untagged
@@ -4398,6 +4369,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
   _container: {fileID: 887970692}
+--- !u!114 &1733877342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733877339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400624462f104db4cb3e1d7a39529f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectValue: 0.2
+  _followTarget: {fileID: 519420032}
 --- !u!1 &1776718641
 GameObject:
   m_ObjectHideFlags: 0
