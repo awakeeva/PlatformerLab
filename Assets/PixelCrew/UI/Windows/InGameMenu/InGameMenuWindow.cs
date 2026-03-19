@@ -21,7 +21,8 @@ namespace PixelCrew.UI.Windows.InGameMenu
 
         public void OnShowSettings()
         {
-            WindowUtils.CreateWindow("UI/SettingsWindow");
+            //WindowUtils.CreateWindow("UI/SettingsWindow");
+            WindowUtils.CreateWindow("UI/PlayerStatsWindow");
         }
 
         public void OnLanguages()

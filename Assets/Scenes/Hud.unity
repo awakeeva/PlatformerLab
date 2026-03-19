@@ -2512,10 +2512,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2142290523}
     m_Modifications:
+    - target: {fileID: 42174190300786172, guid: ae139c51365f9f7468b124d481e81877,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 42174190300786172, guid: ae139c51365f9f7468b124d481e81877,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 42174190300786172, guid: ae139c51365f9f7468b124d481e81877,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 34.81849
+      objectReference: {fileID: 0}
+    - target: {fileID: 42174190300786172, guid: ae139c51365f9f7468b124d481e81877,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -33.074997
+      objectReference: {fileID: 0}
     - target: {fileID: 2077260746278116001, guid: ae139c51365f9f7468b124d481e81877,
         type: 3}
       propertyPath: m_Name
       value: PlayerStatsWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077260746278116001, guid: ae139c51365f9f7468b124d481e81877,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2077260746278116014, guid: ae139c51365f9f7468b124d481e81877,
         type: 3}
@@ -2621,6 +2646,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077260746619135136, guid: ae139c51365f9f7468b124d481e81877,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077260746619135136, guid: ae139c51365f9f7468b124d481e81877,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077260746619135136, guid: ae139c51365f9f7468b124d481e81877,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077260746619135136, guid: ae139c51365f9f7468b124d481e81877,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -13.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae139c51365f9f7468b124d481e81877, type: 3}
