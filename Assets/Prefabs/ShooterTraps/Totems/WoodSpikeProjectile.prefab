@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1.5
+  _damage: -1
   _invertX: 1
 --- !u!114 &-7245468395000016799
 MonoBehaviour:
