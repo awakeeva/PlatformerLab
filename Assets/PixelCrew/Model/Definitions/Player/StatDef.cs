@@ -9,16 +9,16 @@ namespace PixelCrew.Model.Definitions
         [SerializeField] private string _name;
         [SerializeField] private StatId _id;
         [SerializeField] private Sprite _icon;
-        [SerializeField] private StatLevel[] _levels;
+        [SerializeField] private StatLevelDef[] _levels;
 
         public StatId ID => _id;
         public string Name => _name;
         public Sprite Icon => _icon;
-        public StatLevel[] Levels => _levels;
+        public StatLevelDef[] Levels => _levels;
     }
 
     [Serializable]
-    public struct StatLevel
+    public struct StatLevelDef
     {
         [SerializeField] private float _value;
         [SerializeField] private ItemWithCount _price;

@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Model.Data;
+using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Utils.Disposables;
 using System;
@@ -10,14 +11,18 @@ namespace PixelCrew.Model.Models
     {
         private readonly PlayerData _data;
 
+        public readonly ObservableProperty<StatId> InterfaceSelectedStat = new ObservableProperty<StatId>();
+
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
+
         public StatsModel(PlayerData data)
         {
             _data = data;
+            _trash.Retain(InterfaceSelectedStat.Subscribe( (x,y) => OnChanged?.Invoke()));
         }
 
         public event Action OnChanged;
 
-        private CompositeDisposable _trash = new CompositeDisposable();
         public IDisposable Subscribe(Action call)
         {
             OnChanged += call;
@@ -29,7 +34,7 @@ namespace PixelCrew.Model.Models
         {
             var def = DefsFacade.I.Player.GetStat(id);
             
-            var nextLevel = GetLevel(id) + 1;
+            var nextLevel = GetCurrentLevel(id) + 1;
             if (def.Levels.Length >= nextLevel)
                 return;
             
@@ -43,14 +48,18 @@ namespace PixelCrew.Model.Models
             OnChanged?.Invoke();
         }
 
-        public float GetValue(StatId id)
+        public float GetCurrentValue(StatId id)
         {
-            var def = DefsFacade.I.Player.GetStat(id);
-            var level = def.Levels[GetLevel(id)];
-            return level.Value;
+            return GetCurrentLevelDef(id).Value;
         }
 
-        public int GetLevel(StatId id) => _data.Levels.GetLevel(id);
+        public StatLevelDef GetCurrentLevelDef(StatId id)
+        {
+            var def = DefsFacade.I.Player.GetStat(id);
+            return def.Levels[GetCurrentLevel(id)];
+        }
+
+        public int GetCurrentLevel(StatId id) => _data.Levels.GetLevel(id);
 
         public void Dispose()
         {
