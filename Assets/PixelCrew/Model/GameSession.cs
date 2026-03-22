@@ -2,6 +2,7 @@
 using System.Linq;
 using PixelCrew.Components.LevelManagment;
 using PixelCrew.Model.Data;
+using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Models;
 using PixelCrew.Utils.Disposables;
 using UnityEngine;
@@ -86,6 +87,9 @@ namespace PixelCrew.Model
 
             StatsModel = new StatsModel(_data);
             _trash.Retain(StatsModel);
+
+            _data.Hp.Value = (int) StatsModel.GetValue(StatId.Hp);
+            _data.FullHealth.Value = (int) StatsModel.GetValue(StatId.Hp);
         }
 
         private void LoadHud()

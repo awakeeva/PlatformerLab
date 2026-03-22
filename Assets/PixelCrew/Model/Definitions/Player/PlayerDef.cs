@@ -11,7 +11,6 @@ namespace PixelCrew.Model.Definitions
         [SerializeField] private StatDef[] _stats;
 
         public int InventorySize => _inventorySize;
-        public int MaxHealth => _maxHealth;
 
         public StatDef[] Stats => _stats;
 

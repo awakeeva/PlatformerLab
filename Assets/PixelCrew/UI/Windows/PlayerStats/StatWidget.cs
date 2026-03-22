@@ -47,7 +47,6 @@ namespace PixelCrew.UI.Windows.PlayerStats
             var currentLevel = statsModel.GetCurrentLevel(_data.ID);
             var nextLevel = currentLevel + 1;
             var increaseValue = statsModel.GetValue(_data.ID, nextLevel);
-            //_increaseValue.text = "+ " + increaseValue.ToString(CultureInfo.InvariantCulture);
             _increaseValue.text = $"+ {increaseValue}";
             _increaseValue.gameObject.SetActive(increaseValue > 0);
 

@@ -107,18 +107,39 @@ namespace PixelCrew.Creatures.Hero
         {
             _session = FindObjectOfType<GameSession>();
 
-            HealthComp.SetHealth(_session.Data.FullHealth, _session.Data.Hp.Value);
+            HealthComp.SetHealth(_session.Data.FullHealth.Value, _session.Data.Hp.Value);
 
             _session.Data.Inventory.onChanged += OnInventoryChanged;
             _session.Data.Inventory.onChanged += OnInventoryChangedLog;
+            _session.StatsModel.OnUpgraded += OnHeroUpgraded;
 
             UpdateHeroWeapon();
+        }
+
+        private void OnHeroUpgraded(StatId statId)
+        {
+            switch (statId)
+            {
+                case StatId.Hp:
+                    var fullHealth = (int)_session.StatsModel.GetValue(statId);
+                    _session.Data.Hp.Value = fullHealth;
+                    _session.Data.FullHealth.Value = fullHealth;
+                    HealthComp.SetHealth(fullHealth, fullHealth);
+                    break;
+                case StatId.Speed:
+                    // not here
+                    break;
+                case StatId.RangeDamage:
+                    // to do homework
+                    break;
+            }
         }
 
         private void OnDestroy()
         {
             _session.Data.Inventory.onChanged -= OnInventoryChanged;
             _session.Data.Inventory.onChanged -= OnInventoryChangedLog;
+            _session.StatsModel.OnUpgraded -= OnHeroUpgraded;
         }
 
         private void OnInventoryChangedLog(string id, int value)
@@ -136,7 +157,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnHealthChanged(int fullHealth, int currentHealth)
         {
-            _session.Data.FullHealth = fullHealth;
+            _session.Data.FullHealth.Value = fullHealth;
             _session.Data.Hp.Value = currentHealth;
         }
 
@@ -376,7 +397,9 @@ namespace PixelCrew.Creatures.Hero
                 _additionalSpeed = 0f;
             }
 
-            return base.CalculateSpeed() + _additionalSpeed;
+            //return base.CalculateSpeed() + _additionalSpeed;
+            float defaultSpeed = _session.StatsModel.GetValue(StatId.Speed);
+            return defaultSpeed + _additionalSpeed;
         }
 
         public void NextItem()

@@ -22,6 +22,7 @@ namespace PixelCrew.Model.Models
         }
 
         public event Action OnChanged;
+        public event Action<StatId> OnUpgraded;
 
         public IDisposable Subscribe(Action call)
         {
@@ -46,6 +47,7 @@ namespace PixelCrew.Model.Models
             _data.Levels.LevelUp(id);
 
             OnChanged?.Invoke();
+            OnUpgraded?.Invoke(id);
         }
 
         public float GetValue(StatId id, int level = -1)
