@@ -1076,11 +1076,21 @@ MonoBehaviour:
       - Id: Sword
         Value: 15
       - Id: SilverCoin
-        Value: 50
-    FullHealth: 10
+        Value: 5000
+      - Id: DiamondGreen
+        Value: 5000
+    FullHealth:
+      _value: 0
     Hp:
       _value: 10
-  _defaultCheckPoint: level2-checkpoint0
+    Perks:
+      _used:
+        _value: double-jump
+      _unlocked:
+      - double-jump
+    Levels:
+      _progress: []
+  _defaultCheckPoint: level2-checkpoint1
 --- !u!1001 &228290654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37528,6 +37538,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 501041936}
     m_Modifications:
+    - target: {fileID: 1136425171605449513, guid: bdf684b1a2517384da7e0ed55cb0bdc7,
+        type: 3}
+      propertyPath: _health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136425171605449513, guid: bdf684b1a2517384da7e0ed55cb0bdc7,
+        type: 3}
+      propertyPath: _fullHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5347559436092129816, guid: bdf684b1a2517384da7e0ed55cb0bdc7,
         type: 3}
       propertyPath: m_Name

@@ -137,8 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _damage: -1
   _invertX: 1
+  _damage: 1
+  _damageScaledByPlayerStats: 0
 --- !u!114 &6814668019874494114
 MonoBehaviour:
   m_ObjectHideFlags: 0
