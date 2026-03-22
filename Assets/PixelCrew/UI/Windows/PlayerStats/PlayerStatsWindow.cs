@@ -49,9 +49,12 @@ namespace PixelCrew.UI.Windows.PlayerStats
             _dataGroup.SetData(stats);
 
             var selected = _session.StatsModel.InterfaceSelectedStat.Value;
-
-            var def = _session.StatsModel.GetCurrentLevelDef(selected);
+            var nextLevel = _session.StatsModel.GetCurrentLevel(selected) + 1;
+            var def = _session.StatsModel.GetLevelDef(selected, nextLevel);
             _price.SetData(def.Price);
+
+            _price.gameObject.SetActive(def.Price.Count != 0);
+            _upgradeButton.gameObject.SetActive(def.Price.Count != 0);
         }
 
         private void OnDestroy()

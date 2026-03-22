@@ -35,7 +35,7 @@ namespace PixelCrew.Model.Models
             var def = DefsFacade.I.Player.GetStat(id);
             
             var nextLevel = GetCurrentLevel(id) + 1;
-            if (def.Levels.Length >= nextLevel)
+            if (def.Levels.Length <= nextLevel)
                 return;
             
             var price = def.Levels[nextLevel].Price;
@@ -48,15 +48,22 @@ namespace PixelCrew.Model.Models
             OnChanged?.Invoke();
         }
 
-        public float GetCurrentValue(StatId id)
+        public float GetValue(StatId id, int level = -1)
         {
-            return GetCurrentLevelDef(id).Value;
+            return GetLevelDef(id, level).Value;
         }
 
-        public StatLevelDef GetCurrentLevelDef(StatId id)
+        public StatLevelDef GetLevelDef(StatId id, int level = -1)
         {
+            if (level == -1)
+                level = GetCurrentLevel(id);
+
             var def = DefsFacade.I.Player.GetStat(id);
-            return def.Levels[GetCurrentLevel(id)];
+
+            if (def.Levels.Length > level)
+                return def.Levels[level];
+
+            return default;
         }
 
         public int GetCurrentLevel(StatId id) => _data.Levels.GetLevel(id);

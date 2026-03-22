@@ -266,6 +266,8 @@ MonoBehaviour:
         Value: 15
       - Id: DiamondGreen
         Value: 20
+      - Id: SilverCoin
+        Value: 2000
     FullHealth: 10
     Hp:
       _value: 10
@@ -273,6 +275,8 @@ MonoBehaviour:
       _used:
         _value: 
       _unlocked: []
+    Levels:
+      _progress: []
   _defaultCheckPoint: level3-checkpoint0
 --- !u!1 &267801708
 GameObject:
