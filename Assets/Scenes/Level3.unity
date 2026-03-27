@@ -268,7 +268,8 @@ MonoBehaviour:
         Value: 20
       - Id: SilverCoin
         Value: 2000
-    FullHealth: 10
+    FullHealth:
+      _value: 0
     Hp:
       _value: 10
     Perks:
@@ -678,6 +679,7 @@ Transform:
   m_Children:
   - {fileID: 2057797698}
   - {fileID: 4669831934890988586}
+  - {fileID: 527199204}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -841,6 +843,124 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1001 &527199203
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 501041936}
+    m_Modifications:
+    - target: {fileID: 7394112388570469897, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 527199206}
+    - target: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469903, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_Name
+      value: CrabbyNPC - Dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469903, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e50f3e782db6dd64396a2268baf77582, type: 3}
+--- !u!4 &527199204 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7394112388570469901, guid: e50f3e782db6dd64396a2268baf77582,
+    type: 3}
+  m_PrefabInstance: {fileID: 527199203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &527199205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7394112388570469903, guid: e50f3e782db6dd64396a2268baf77582,
+    type: 3}
+  m_PrefabInstance: {fileID: 527199203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &527199206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527199205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eadba06e4e420b0479dee89026bc0129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 0
+  _bound:
+    _localizeKey: 
+    _sentences:
+    - _value: I can teach you!
+      _icon: {fileID: 21300000, guid: 1a4251048c21cc14288884c8ecbd408d, type: 3}
+      _side: 1
+    - _value: Good!
+      _icon: {fileID: 21300000, guid: 08c93a9c407509b418949417510bf761, type: 3}
+      _side: 0
+    - _value: Let's go!
+      _icon: {fileID: 21300000, guid: 1a4251048c21cc14288884c8ecbd408d, type: 3}
+      _side: 1
+    _type: 1
+  _external: {fileID: 0}
 --- !u!1001 &573108767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10294,6 +10414,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrabbyNPC - Perks
       objectReference: {fileID: 0}
+    - target: {fileID: 7394112388570469903, guid: e50f3e782db6dd64396a2268baf77582,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e50f3e782db6dd64396a2268baf77582, type: 3}
 --- !u!4 &4669831934890988586 stripped
@@ -10312,7 +10437,7 @@ PrefabInstance:
     - target: {fileID: 4669831935230880173, guid: 4d728a5630e822a4daa2333f49a7bf85,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4669831935230880173, guid: 4d728a5630e822a4daa2333f49a7bf85,
         type: 3}

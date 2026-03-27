@@ -35,11 +35,11 @@ namespace PixelCrew.Components.Dialogs
             switch (_mode)
             {
                 case Mode.Bound:
-                    _bound.Sentences = _localized;
+                    //_bound.Sentences = _localized;
                     break;
 
                 case Mode.External:
-                    _external.Data.Sentences = _localized;
+                    //_external.Data.Sentences = _localized;
                     break;
 
                 default:
@@ -59,12 +59,30 @@ namespace PixelCrew.Components.Dialogs
 
         public void Show()
         {
-            if (_dialogbox == null)
-            {
-                _dialogbox = FindObjectOfType<DialogBoxController>();
-            }
+            _dialogbox = FindDialogController();
 
             _dialogbox.ShowDialog(Data);
+        }
+
+        private DialogBoxController FindDialogController()
+        {
+            if (_dialogbox != null) return _dialogbox;
+
+            GameObject controllerGo = null;
+
+            switch (Data.Type)
+            {
+                case DialogType.Simple:
+                    controllerGo = GameObject.FindWithTag("SimpleDialog");
+                    break;
+                case DialogType.Personalized:
+                    controllerGo = GameObject.FindWithTag("PersonalizedDialog");
+                    break;
+                default:
+                    throw new ArgumentException("Undefined dialog type");
+            }
+
+            return controllerGo.GetComponent<DialogBoxController>(); ;
         }
 
         public void Show(DialogDef def)

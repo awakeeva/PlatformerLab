@@ -267,7 +267,7 @@ PrefabInstance:
     - target: {fileID: 220129119110146575, guid: 256b8a44761aefb40b77365605b2de51,
         type: 3}
       propertyPath: _id
-      value: level1-checkpoints-5
+      value: level1-checkpoint5
       objectReference: {fileID: 0}
     - target: {fileID: 220129119110146673, guid: 256b8a44761aefb40b77365605b2de51,
         type: 3}
@@ -2082,6 +2082,72 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 307137692}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &310300355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310300356}
+  - component: {fileID: 310300358}
+  - component: {fileID: 310300357}
+  m_Layer: 0
+  m_Name: FinishLevelPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &310300356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310300355}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 97.94, y: -37.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1548722050}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &310300357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310300355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0daa89ed6a2fe06458d97514ebc6505e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: level1-checkpoint99
+  _heroSpawner: {fileID: 310300358}
+  _setChecked:
+    m_PersistentCalls:
+      m_Calls: []
+  _setUnchecked:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &310300358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310300355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87e7d58850b6ca449ca1c88f7d3a207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 310300356}
+  _prefab: {fileID: 661183055954219102, guid: 5082cf39e8f09664aa3c0a3b0333f3fb, type: 3}
 --- !u!1001 &324662009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4091,8 +4157,13 @@ MonoBehaviour:
   _bound:
     _localizeKey: dialog_door_needs_key
     _sentences:
-    - You need a key...
-    - Try to search...
+    - _value: You need a key
+      _icon: {fileID: 0}
+      _side: 0
+    - _value: Try to find the key
+      _icon: {fileID: 0}
+      _side: 0
+    _type: 0
   _external: {fileID: 0}
 --- !u!114 &807023319 stripped
 MonoBehaviour:
@@ -33850,6 +33921,7 @@ Transform:
   - {fileID: 1830453529}
   - {fileID: 1781369060}
   - {fileID: 16000560}
+  - {fileID: 310300356}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40926,10 +40998,18 @@ MonoBehaviour:
       _inventory:
       - Id: SpeedUpPotion
         Value: 20
-    FullHealth: 30
+    FullHealth:
+      _value: 0
     Hp:
       _value: 3
-  _defaultCheckPoint: level1-checkpoint0
+    Perks:
+      _used:
+        _value: double-jump
+      _unlocked:
+      - double-jump
+    Levels:
+      _progress: []
+  _defaultCheckPoint: level1-checkpoint99
 --- !u!1001 &2081072957
 PrefabInstance:
   m_ObjectHideFlags: 0
