@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using PixelCrew.Components.LevelManagment;
 using PixelCrew.Model.Data;
@@ -129,6 +130,19 @@ namespace PixelCrew.Model
         private void OnDestroy()
         {
             _trash.Dispose();
+        }
+
+        private List<string> _removedItems = new List<string>();
+
+        public bool RestoreState(string id)
+        {
+            return _removedItems.Contains(id);
+        }
+
+        public void StoreState(string id)
+        {
+            if (!_removedItems.Contains(id))
+                _removedItems.Add(id);
         }
     }
 }
